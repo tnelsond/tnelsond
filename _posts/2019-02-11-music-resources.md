@@ -8,7 +8,7 @@ tags: music resources
 Lead Sheets (Melody and Chords)
 ====
 
-- [music-folk-play-hymns.com](http://music-folk-play-hymns.com/Hymn-Lead-Sheets)
+- [music-folk-play-hymns.com](http://www.music-folk-play-hymns.com/Hymn-Lead-Sheets.html)
 - [michaelkravchuk.com/](http://michaelkravchuk.com/lead-sheets)
 
 Sheet Music
