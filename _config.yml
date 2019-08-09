@@ -16,10 +16,9 @@
 title: tnelsond 
 email: tnelsond@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Organizing my creative pursuits.
-  I have a lot of hobbies.
+	To live is Christ.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "tnel.space" # the base hostname & protocol for your site, e.g. http://example.com
+url: "tnelsond.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  tnelsond
 youtube_username:  tnelsond
 soundcloud_username:  tnelsond
