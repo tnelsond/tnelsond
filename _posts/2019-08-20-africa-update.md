@@ -12,40 +12,40 @@ I didn't exactly trust that leaving from Dubuque at 11:15am would be early enoug
 
 I got Joy and Hopper a double seat on the back of the bus and I sat by a man who was intently invested in his cellphone. At one of our stops, another man got on board and sat across the aisle from me. He pulled out his laptop and I couldn't help but notice that something looked familiar.
 
-``Is that Vim?'' I asked catching a glimpse of a classic style white on black text editor program that had multiple panes.
+"Is that Vim?" I asked catching a glimpse of a classic style white on black text editor program that had multiple panes.
 
-``Actually it's Emacs.'' He said. And thus we began to talk. He was a software engineer, a topic that for some reason or another I was fairly adept in. We talked at great length. He asked me why I don't do more with programming or software engineering.
+"Actually it's Emacs." He said. And thus we began to talk. He was a software engineer, a topic that for some reason or another I was fairly adept in. We talked at great length. He asked me why I don't do more with programming or software engineering.
 
-``I've come to the conclusion that relationships are the most important thing in my life.'' I explained, ``And I want to spend more of my time telling people about Jesus.'' We continued to talk about software of course.
+"I've come to the conclusion that relationships are the most important thing in my life." I explained, "And I want to spend more of my time telling people about Jesus." We continued to talk about software of course.
 
 Airport
 ======
 
 When we finally got to the airport, I knew we were a bit late.
 
-``What are you doing!'' Said a lady in a purple-maroon hat and suit.
+"What are you doing!" Said a lady in a purple-maroon hat and suit.
 
-``We're closed. They're already boarding, why are you late?''
+"We're closed. They're already boarding, why are you late?"
 
-``I guess the bus was later than we thought.'' I responded sheepishly.
+"I guess the bus was later than we thought." I responded sheepishly.
 
-``See that clock? That says 5:51.'' She continued. I wasn't worried because God had everything in control, just a little bit confused.
+"See that clock? That says 5:51." She continued. I wasn't worried because God had everything in control, just a little bit confused.
 
-``You're one minute late.'' She continued yet again.
+"You're one minute late." She continued yet again.
 
 But nevertheless, she, along with another lady helped us check-in and told us to run to the security checkpoint.
 
 We were apprehended by a short American woman who I saw check-in at the desk next to us.
 
-``You from Overland?'' She asked trying to keep up.
+"You from Overland?" She asked trying to keep up.
 
-``Yeah you must be Aimee.'' I said.
+"Yeah you must be Aimee." I said.
 
-``Yes.''
+"Yes."
 
-``Which Amy?'' Asked Hopper, ``Is it the fun one?''
+"Which Amy?" Asked Hopper, "Is it the fun one?"
 
-``Carr.'' She replied. Joy grabbed Aimee's luggage and we all ran to the security checkpoint. Hopper pranced with great speed and though he had heavy boots it never seemed like his feet touched the ground (That's how he runs, no one knows why). Whereas, I did a low to the ground speed-walk/run where my feet barely left the ground. And the girls trailed behind.
+"Carr." She replied. Joy grabbed Aimee's luggage and we all ran to the security checkpoint. Hopper pranced with great speed and though he had heavy boots it never seemed like his feet touched the ground (That's how he runs, no one knows why). Whereas, I did a low to the ground speed-walk/run where my feet barely left the ground. And the girls trailed behind.
 
 I left my laptop in my bag and we had to run in through again. Then I read the wrong boarding pass and couldn't find the gate because of that. But I asked for directions and I was told of the right gate where I found Hopper, his wife, and Aimee. But Hopper and I still read the wrong boarding passes so we missed our loading zone, but the airline people had no problem correcting us.
 
@@ -63,11 +63,11 @@ Flight to Kenya
 
 When we landed in Qatar we found our gate and waited in the lounge area. We could have met up with the other group of people going to Zambia Livingston, but they were at a far different gate and had a different path and we didn't have too much time. While we waited I played my tenor recorder. Then another American woman sat next to Aimee.
 
-``You going to Zambia with Overland?'' She asked.
+"You going to Zambia with Overland?" She asked.
 
-``Yes. You must be Jessy.'' I said. 
+"Yes. You must be Jessy." I said. 
 
-``Yep.'' Jessy was even shorter than Aimee and had wavy hair. She'd been to Zambia before.
+"Yep." Jessy was even shorter than Aimee and had wavy hair. She'd been to Zambia before.
 
 We got on our flight and Jessy had the window seat, and I had the aisle seat with an empty seat between us. I could kinda see Joy and Hopper a few rows away and on the other side. 
 
