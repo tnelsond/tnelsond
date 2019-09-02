@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "First days at AMT"
-date:   2019-09-01 15:28:38 -0600
+date:   2019-08-22 13:28:38 -0600
 tags: missions
 ---
 
@@ -43,11 +43,11 @@ We met up with everybody and hiked back up the gorge and I was embued with energ
 
 The next day, I was teaching one of the resident young girls how to play Ukulele.
 
-In the evening, Joy, Hopper, Thera (my Cambodian roomate), and I hiked the gorge. Apparently, I'm very sure footed and quick, as my brother-in-law Reece knows. And I was amazed that I did not tire quickly but had as much energy as the day before. We wrote "Lo-winski" in very large rocks on the sand, because he didn't want to come hike the gorge that day as he had the day prior.
+In the evening, Joy, Hopper, Theara (my Cambodian roomate), and I hiked the gorge. Apparently, I'm very sure footed and quick, as my brother-in-law Reece knows. And I was amazed that I did not tire quickly but had as much energy as the day before. We wrote "Lo-winski" in very large rocks on the sand, because he didn't want to come hike the gorge that day as he had the day prior.
 
 Then, we had supper and I played with another little girl named Addy. We did gymnastics and goofy walks, etc. After that, we played soccer with a lot of the staff and students.
 
-My tentmate was Thera, a man that Joy calls "Cambodian Hopper." He has a lot of energy when he speaks and it's fun to talk to him.
+My tentmate was Theara, a man that Joy calls "Cambodian Hopper." He has a lot of energy when he speaks and it's fun to talk to him.
 
 ----
 
