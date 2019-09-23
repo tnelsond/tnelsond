@@ -16,8 +16,9 @@ So even if you see something negative about someone, you can prophesy the truth 
 I helped the work-team rake leaves that week in addition to my regular dishwashing duties. Corey, Theara, and I went down the gorge with a couple Zambian workers to go fishing Friday night. We didn't catch anything, but we almost caught a big fish (possibly catfish). We had to go back up by 10:30pm, so we did; but Bobby and Philmore the Zambians kept fishing all night and caught 12 or so fish.
 
 --------------------------------------------
+
 Revival Week
-============
+==========
 
 Revival week started Saturday night. There was many sessions of worship and preaching as well as some Holy Spirit fun Pentecostal stuff at the end. I was fighting to stay up, it went until midnight or so. I did the dishes after dinner every night, (usually with Hopper and some other people) in addition to the final dishes after the meeting ended.
 
