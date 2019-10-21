@@ -10,7 +10,7 @@ Tommy, Hop, and I have gone to the village near the base (Nsongwe) twice now to 
 
 A couple days ago I was pretending to be a tiger and I chased the children here at base around. They had a lot of fun; although they were a little scared at first. I actually scared a couple of the adults with how convincing my growling was. 
 
-So much has happened I don't really know what to talk about. My friend Madelynn, aka American me, has been reading my mind. It's crazy! We were playing the game Things (if you don't know what that is, you should, it's one of my favorite games) and she like always knew my answer. It was wierd, because I would try to come up with an answer that she wouldn't guess was mine and she'd still get me out. 
+So much has happened I don't really know what to talk about. My friend Madelynn, aka American me, has been reading my mind. It's crazy! We were playing the game Things (if you don't know what that is, you should, it's one of my favorite games) and she like always knew my answer. It was weird, because I would try to come up with an answer that she wouldn't guess was mine and she'd still get me out. 
 
 Me and Hop live in a house now, with a toilet, a shower, a fridge, and a fan. It's crazy, we're so spoiled. 
 
