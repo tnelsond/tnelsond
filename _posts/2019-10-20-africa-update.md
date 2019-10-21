@@ -13,6 +13,8 @@ It was great to hear the testimonies of the people we had visited before and how
 
 However, this week when we went we couldn't find any one to join us, so it was just the trinity as they call us. We were supposed to get a ride, but I mismanaged that, so we walked to the village. Everyone was saying it was hot, even the Zambians, but I thought it was fine, if that's all that hot weather has for me, then it's weak. I don't let my circumstances determine my comfort, because the comforter (the holy spirit) is inside of me, it's not dependent on my circumstances.
 
+We preached the gospel to some children, and they received Christ. But we let them know all that they have as sons of God, which is the next section.
+
 Gospel of Identity
 =============
 
