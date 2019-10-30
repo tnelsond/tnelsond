@@ -15,7 +15,7 @@ Then Jane Marie had us run for 20 minutes, I wore myself out (I went as fast as 
 
 This week we learned about Sustain, which is "farming God's way" and gets people self-sufficent and out of poverty and using their resources wisely and efficiently. It focuses around discipleship and getting people to understand who they are in Christ. I really like the system, I want to try it back in the states.
 
-Phil Smethurst (the President of Overland) spoke to us about our identity in Christ and picked on me and Theera. He said that everyone from Dubuque carries a recorder in their back pocket. Lol. His message was about us no longer being citizens of particular places, but being from the Kingdom of Heaven. And when we're from the Kingdom of Heaven, we're no longer predictable, we don't act like "people from Dubuque, or Cambodia, or whatever" we have Christ's character.
+Phil Smethurst (the President of Overland) spoke to us about our identity in Christ and picked on me and Theara. He said that everyone from Dubuque carries a recorder in their back pocket. Lol. His message was about us no longer being citizens of particular places, but being from the Kingdom of Heaven. And when we're from the Kingdom of Heaven, we're no longer predictable, we don't act like "people from Dubuque, or Cambodia, or whatever" we have Christ's character.
 
 We hiked down the gorge, I timed it, it took me 3:48 down, and 16:30 back up eventually. I'm going to try to cut my times down. While we were down there we tried fishing with Casey's fishing equipment. But we didn't catch anything. Corey has some ideas for catching some giant catfish later... I'm game to try that.
 
