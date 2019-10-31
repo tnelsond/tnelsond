@@ -17,7 +17,7 @@ On day two, Joy gave a good message talking about how she used to be insecure an
 The next day, inspired by Joy, I decided to be more vulnerable and speak more from the heart.
 Joy said she almost cried.
 
-I talked about my life, and my testimony, this isn't verbatim, but it's an excerpt from my [Gospel of Identity paper](http://tnelsond.com/gospelofidentitypaper.pdf) that I had to write for class.
+I talked about my life, and my testimony, this isn't verbatim, but it's an excerpt from my [Gospel of Identity paper](http://tnelsond.com/assets/gospelofidentitypaper.pdf) that I had to write for class.
 
 > I really tried to love God more, I worked at it, some of the time, but all my effort to abstain from sin and evil thoughts was short-term and even then, my heart was still corrupt. I was living in guilt and condemnation.
 
