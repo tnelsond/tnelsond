@@ -40,6 +40,6 @@ People get caught up in what they eat, is that really our focus for life?
 
 "I don't like this food so I'm not eating." Or, "I'm having something else."
 
-Does it really matter? Why do we have such strong opinions about it? Then we have to have foods on perfect rotations so that we're not eating the same thing we had yesterday; why does it matter what we had yesterday? Today is a new day, my stomach doesn't care what I had yesterday. There's just so many hoops to jump through in regards to food and I can't help but think that it's a system of oppression put on us by our overlords, our food. Why do we spend so much time *serving* food (I mean this to be taken both ways)?
+Does it really matter? Why do we have such strong opinions about it? Then we have to have foods on perfect rotations so that we're not eating the same thing we had yesterday; why does it matter what we had yesterday? Today is a new day, my stomach doesn't care what I had yesterday. There's just so many hoops to jump through in regards to food and I can't help but think that it's a system of oppression put on us by our overlords, our food. Why do we spend so much time *serving* food? (I mean this to be taken both ways)
 
 The problem is that no one wants to get free. We find our comfort in food instead of God. I've seen it take lives, I've seen it breed bitterness, I've seen it set up roadblocks that hinder the gospel. Is it worth it? Is food better than the Lord?
