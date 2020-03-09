@@ -27,7 +27,7 @@ __Account#:__
 
     3302
 
-eCheck or Card
+or eCheck or Card
 ================
 
 Go to: [Overlandmissions.com/donate](https://www.overlandmissions.com/donate)
