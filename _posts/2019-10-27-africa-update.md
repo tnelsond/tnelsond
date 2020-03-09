@@ -5,9 +5,6 @@ date:   2019-10-29 19:28:38 -0600
 tags: missions
 ---
 
-Preaching Class
-=============
-
 We got to practice preaching every day. It was interesting and fun. The first couple days were improv based on scriptures we drew out of a basket or envelope.
 
 A lot of people were very apprehensive, I'm not the most elegant or confident speaker, but I gave some alright sermons. Some where more carnal and not lead by the spirit and I wasn't as satisfied with those.

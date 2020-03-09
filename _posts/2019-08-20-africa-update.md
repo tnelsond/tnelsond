@@ -5,9 +5,6 @@ date:   2019-08-20 15:28:38 -0600
 tags: missions
 ---
 
-Bus
-=====
-
 I didn't exactly trust that leaving from Dubuque at 11:15am would be early enough to catch a bus in Madison and from there get to the Chicago airport 2 hours before our flight left at 6:50pm.
 
 I got Joy and Hopper a double seat on the back of the bus and I sat by a man who was intently invested in his cellphone. At one of our stops, another man got on board and sat across the aisle from me. He pulled out his laptop and I couldn't help but notice that something looked familiar.

@@ -5,10 +5,7 @@ date:   2019-10-11 20:28:38 -0600
 tags: missions
 ---
 
-Wilderness First Responder Course
-=================
-
-We started taking a course where essentially we learn how to be EMTs. It's definitely fun stuff. Now I can pretend to be a doctor with so much more plausibility. I'll use the simpler stuff often, I'm sure. Though really, Jesus is my healer, so I'll always go to him first.
+We started taking a course (Wilderness First Responder) where essentially we learn how to be EMTs. It's definitely fun stuff. Now I can pretend to be a doctor with so much more plausibility. I'll use the simpler stuff often, I'm sure. Though really, Jesus is my healer, so I'll always go to him first.
 
 Our bodies are amazing, we truly are beautifully and wonderfully made. God is so great.
 

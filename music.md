@@ -1,9 +1,11 @@
 ---
-layout: post
+layout: page
 title:  "Music Resources"
-date:   2019-02-28 10:40:38 -0600
+permalink: "/music"
 tags: music resources
 ---
+
+I play the mandolin, recorder, and ocarina mostly.
 
 Lead Sheets (Melody and Chords)
 ====
@@ -25,5 +27,5 @@ Beginner Songs
 - Nothing But the Blood
 - Down At the Cross
 - Amazing Grace
-- Come Thou Fount
+- O Thou Fount
 - Be Thou My Vision

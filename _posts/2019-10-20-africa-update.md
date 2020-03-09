@@ -5,9 +5,9 @@ date:   2019-10-20 19:28:38 -0600
 tags: missions
 ---
 
-Ministering in Nsongwe
-================
-Every Sunday I organize a group and we go out and minister in the nearby village by the base. It's refreshing to go out, pray for people (see them healed), talk with them, preach to them, and share God's love. It's typically me, Joy, Hopper, and a Cambodian who go. (The first time we took Theara (Cambodian Hopper); the next time we took Samrach, a nice Cambodian woman) We go to Nsongwe and we seek out Trevor (because he invited us) and either he goes out with us as our translator, or he gives us someone else, like his cousin Ellefa.
+Ministering in Nsongwe:
+Every Sunday I organize a group and we go out and minister in the nearby village by the base. It's refreshing to go out, pray for people (see them healed), talk with them, preach to them, and share God's love. It's typically me, Joy, Hopper, and a Cambodian who go. (The first time we took Theara (Cambodian Hopper); the next time we took Samrach. (a nice Cambodian woman) We go to Nsongwe and we seek out Trevor (because he invited us) and either he goes out with us as our translator, or he gives us someone else, like his cousin Ellefa.
+
 
 It was great to hear the testimonies of the people we had visited before and how they were healed, walking in Christ's identity, and that they were blessed by our visit. They're a close community.
 

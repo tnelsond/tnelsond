@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "Africa Hopper Update"
+title:  "Hopper's Africa Update"
 date:   2019-09-01 20:38:38 -0600
 tags: missions
 ---
-From Jake Hopper
-======
 
-Greetings to friends and family alike, may the sanctifying grace and tranqualizing peace of the Lord be upon you.
+Greetings to friends and family alike, may the sanctifying grace and tranquilizing peace of the Lord be upon you.
 
 Long Short, Week 1, missed bus, arrived late, ran to terminal, was 1 minute late w/ Amy Carr, who called me a banana which ironically in cambodian Jake translates to Banana, weird. flight was awesome, food, games, movies, what a chill time, Wife enjoyed it aswell her 1st time flying. Landed wenta market for snax and money transfer (12.9393 ratio), got asked by a fella who was infirm to buy him poridge, so we did, went to base got setup, hung about view is nuts, rapid 14 has rapids who knew? Then they said u touch the water we send ya home, people die there, and crocs, and hippo's and water is acid, and also scalding hot, and also freezing cold, also theres sharks, so water is a no go. But you can hike down the gorge its real steep, but down there is the rapid, and theres this lil sand beach where they spelled with rocks "welcome amt aug 19", which u can see from the base, which is on the cliff edge way above. So when ya look down ya can read the sand txt.
 

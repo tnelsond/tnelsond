@@ -4,8 +4,6 @@ title:  "Glory (Back 'Home')"
 date:   2019-11-25 19:28:38 -0600
 tags: missions
 ---
-Glory
-=====
 
 "Do you know what all of this is for?" Said Dan Galle to me months ago, "This battle of God versus Satan? The devil has already lost, what in the world is he fighting for? It's all about who gets the glory."
 

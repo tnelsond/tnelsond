@@ -4,8 +4,6 @@ title:  "Joy's Second Week of School"
 date:   2019-09-11 19:28:38 -0600
 tags: missions
 ---
-From Joy
-========
 Hey everyone, this is Joy writing, Hopper's wife and Tommy's sister. It's been about two and a half weeks of AMT, and it's definitely different than I expected. We've been informed that "dirty missionaries" is not a thing here, they prefer people shower once a day, wash their clothes once a week, and keep their tents nice and orderly (we've been told they have surprise inspections). All the food is delicious, with every meal something new. We haven't really got the chance to eat gross or challenging foods, although we do get to finish everyone else's plates. It's funny, we seem like homeless starving people as we ask people for their leftovers. Many times I'll be taking people's dishes and just hand the plates with leftovers/scraps to Tommy or Hopper. There is no shortage of food on the base, we just don't like seeing food go to waste.
 
 When we first got here we immediately served anywhere and in anything we could, lots of dishes, cleaning tables and such. In the bush, we got to wash dishes every night (Hopper especially); the leaders informed us that we didn't have to, which we knew, we just like to serve. At night (when we were in the bush) we needed to refill our water jugs for the camp at the village well, so we decided to go the second mile and pump water for the villagers there as well. Hopper did it several nights in a row empowered by the spirit; it's tiring work. 

@@ -4,9 +4,6 @@ title:  "Bushcooking"
 date:   2019-11-04 19:28:38 -0600
 tags: missions
 ---
-
-Class
-====
 We got to do a bushcooking class where we take limited resources over a fire in the woods and make fun meals. The Cambodians already have it all mastered, but the Americans have interesting ideas. I had my team make a lentil chilli the first day, we didn't get first place, but we tied for second.
 
 Corey's team made a chicken potato soup with gingered apples on the side (the apples were wonderful).
