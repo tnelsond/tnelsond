@@ -2,7 +2,7 @@
 backend:
   name: github
   branch: master # Branch to update (optional; defaults to master)
-  repo: tnelsond/tnelsond.git
+  repo: tnelsond/tnelsond
 media_folder: 'assets'
 
 collections:
