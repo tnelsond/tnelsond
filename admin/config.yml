@@ -3,7 +3,7 @@
 backend:
 	name: github
   branch: master
-	repo: tnelsond/tnelsond # Path to your GitHub repository
+  repo: tnelsond/tnelsond # Path to your GitHub repository
 media_folder: 'assets'
 
 collections:
