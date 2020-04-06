@@ -2,7 +2,8 @@
 
 backend:
   name: github
-	repo: tnelsond/tnelsond.git
+  repo: tnelsond/tnelsond.git
+	branch: master
 media_folder: 'assets'
 
 collections:
