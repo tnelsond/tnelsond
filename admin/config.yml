@@ -1,7 +1,8 @@
 # config.yml
 backend:
-  name: git-gateway
+  name: github
   branch: master # Branch to update (optional; defaults to master)
+  repo: tnelsond/tnelsond.git
 media_folder: 'assets'
 
 collections:
