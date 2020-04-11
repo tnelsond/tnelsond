@@ -21,7 +21,7 @@ plainwhite:
     #youtube: tnelsond
     #github: tnelsond 
     #rss: rss
-    #youtube_channel: tnelsond 
+    youtube_channel: tnelsond 
     #twitter: thelehhman
     #linkedIn: in/thelehhman
     # dribbble: jekyll
@@ -49,6 +49,8 @@ plainwhite:
       url: "/music"
     - title: Writing
       url: "/writing"
+    - title: Youtube
+      url: "http://youtube.com/user/tnelsond"
     - title: Join Me
       url: "/join"
 
