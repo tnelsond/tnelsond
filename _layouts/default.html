@@ -3,7 +3,7 @@
   <head>
     {%- include head.html -%}
   </head>
-  <body>
+<body onload=' location.href="#content" '>
     <main class="container">
       <section class="about">
         <a href="/"><img src="{{ "/assets/portfolio.png" | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
@@ -35,10 +35,10 @@
           {%- endif -%}
         </ul>
 
-        {%- if site.plainwhite.navigation -%}
+        {%- if site.data.navigation -%}
           <nav class="navigation">
             <ul>
-              {% for link in site.plainwhite.navigation %}
+              {% for link in site.data.navigation.items %}
                 <li>
                   <a href="{{ link.url }}">{{ link.title }}</a>
                 </li>
@@ -46,11 +46,8 @@
             </ul>
           </nav>
         {%- endif -%}
-
-        <p>&copy;
-          {{ "now" | date: "%Y" }}</p>
       </section>
-      <section class="content">
+      <section id="content" class="content">
         {{ content }}
       </section>
     </main>
