@@ -1,0 +1,13 @@
+items:
+  - title: About
+    url: "/about"
+  - title: Music Resources
+    url: "/music"
+  - title: Writing
+    url: "/writing"
+  - title: Youtube
+    url: "http://youtube.com/user/tnelsond"
+  - title: Join Me
+    url: "/join"
+
+
