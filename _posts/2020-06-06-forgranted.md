@@ -5,8 +5,9 @@ date:   2020-06-06 01:28:38 -0600
 tags: cambodia
 ---
 
-It's often a bad thing to take things for granted because you are assuming permanence to something that could change.
-But I tell you that we should take all of God's promises for granted. No I don't mean that we should cease being grateful for what God has given, I mean that we should believe his word.
+It's often a bad thing to take things for granted because you are assuming permanence to something that could change. But God doesn't change and his word does not change.
+
+I tell you that we should take all of God's promises for granted. No I don't mean that we should cease being grateful for what God has given, I mean that we should believe his word.
 
 > "seeing that his divine power has granted to us all things that pertain to life and godliness, through the knowledge of him who called us by his own glory and virtue;  by which he has granted to us his precious and exceedingly great promises; that through these you may become partakers of the divine nature, having escaped from the corruption that is in the world by lust." **(II Peter 1:3-4 [WEB])**
 
