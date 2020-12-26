@@ -24,6 +24,13 @@ Written for assignments for an AMT class (Overland's [Advanced Mission Training]
   An essay written after reading E. W. Kenyon's *"The Bible in Light of Our Redemption."*
 
 
+Additional Essays
+=============
+- [How To Eat Anything](/assets/howtoeatanything.pdf)
+
+Teaches how to break the vice of *picky eating*.
+
+
 Novels
 ======
 
