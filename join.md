@@ -1,9 +1,9 @@
 ---
-layout: page
 title: Join Tommy Downs' Team
+layout: page
 permalink: /join/
 ---
-
+https://www.overlandmissions.com/donate/?memo=3295https://www.overlandmissions.com/donate/?memo=3295https://www.overlandmissions.com/donate/?memo=3295
 I'm a missionary with [Overland Missions](http://www.overlandmissions.com); so if you'd like to join my team and strengthen me to serve the Lord in Cambodia, then there's several things you can do.
 
 First, e-mail me, call me, or find me; an important part of being a part of my team is communication, we're in this together to reach the neglected and forgotten peoples.
@@ -20,8 +20,8 @@ Note that in order for any donations to be counted towards my budget (I'm not pe
 eCheck or Card
 ---------------
 
-Go to: [Overlandmissions.com/donate](https://www.overlandmissions.com/donate)
-
+Go to: [Overlandmissions.com/donate](
+https://www.overlandmissions.com/donate/?memo=3302)
 And just make sure to put
 in the *Donation Memo* line.
 
