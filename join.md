@@ -3,7 +3,7 @@ title: Join Tommy Downs' Team
 layout: page
 permalink: /join/
 ---
-https://www.overlandmissions.com/donate/?memo=3295https://www.overlandmissions.com/donate/?memo=3295https://www.overlandmissions.com/donate/?memo=3295
+h
 I'm a missionary with [Overland Missions](http://www.overlandmissions.com); so if you'd like to join my team and strengthen me to serve the Lord in Cambodia, then there's several things you can do.
 
 First, e-mail me, call me, or find me; an important part of being a part of my team is communication, we're in this together to reach the neglected and forgotten peoples.
