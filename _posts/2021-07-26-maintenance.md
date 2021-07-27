@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Florida"
+title:  "Maintenance"
 date:   2021-07-26 01:28:38 -0600
 tags: florida
 ---
@@ -14,7 +14,9 @@ After work, We went out a couple times a week or so and did some evangelism, whi
 
 ## Opportunity
 On a whim, John Sharpe invited me, Micah, and Priscilla to speak at his home church 3 hours away in Sarasota. We're all housemates, but it was great going on a roadtrip together and sharing the vision and work of Overland Missions at Shining Light Church. They showed us so much kindness. We prayed for people to mature into who God has called them to be and to be effective at raising disciples and spreading the gospel here and abroad.
-![Sharing at a church](/assets/pics/shiningpanel.jpg)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lV8yMz330rM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[full service](https://www.youtube.com/watch?v=BGKW5PUHiH8)
 
 ## Matt and Kim's Wedding
 Matt and Kim our friends who are stepping into the roles of admins of our Cambodia team are getting married on Saturday, so we're all excited to go to that. They're gonna be in sector together in Cambodia with Micah.
