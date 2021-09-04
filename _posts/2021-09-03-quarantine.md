@@ -4,9 +4,12 @@ title:  "Holiday in Cambodia"
 date:   2021-09-03 01:28:38 -0600
 tags: cambodia
 ---
+
+![Quarantine](/assets/pics/holidaycambodia.jpg)
+
 ## Got our visas
 
-So Micah and I finally got our visas to Cambodia (because we managed to get an up-to-date tax receipt from our organizatin in Cambodia. But Micah had to leave Florida to go back home to West Virginia to get his motorcycle license. I was ready to fly out, but I was waiting on both Micah and Tori to be as well. It was a bit of waiting for me in Florida, but I got to meet the new staff members coming to Cambodia who were starting their ministry partnership development training (support raising).
+So Micah and I finally got our visas to Cambodia (because we managed to get an up-to-date tax receipt from our organization in Cambodia. But Micah had to leave Florida to go back home to West Virginia to get his motorcycle license. I was ready to fly out, but I was waiting on both Micah and Tori to be as well. It was a bit of waiting for me in Florida, but I got to meet the new staff members coming to Cambodia who were starting their ministry partnership development training (support raising).
 
 I also got to do evangelism ministry with some people from Destiny Church around town; it was always a blast.
 
@@ -48,14 +51,14 @@ We were quickly escorted through a path that was narrowly carved and separated f
 
 ## Landing in Cambodia
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jA2uo7LfzEs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="350" height="275" src="https://www.youtube.com/embed/jA2uo7LfzEs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-When we landed in Cambodia we went through a series of checks and tests and deposited our $2000 to cover our mandatory quarrantine with our preferred Cambodian bank. We then got on our bus and headed towards our mystery hotel. We had hoped to be able to room together, but we were soon separated and living in different rooms in the 5 star Sokha Hotel.
+When we landed in Cambodia we went through a series of checks and tests and deposited our $2000 to cover our mandatory quarantine with our preferred Cambodian bank. We then got on our bus and headed towards our mystery hotel. We had hoped to be able to room together, but we were soon separated and living in different rooms in the 5 star Sokha Hotel.
 
 ### Sokha
-It's $75 a day, so that's not too bad, but food is $10 a meal. The food is pretty good, on the 4th day I finally ordered some (not because I was hungry, but just out of curiousity). Apparently I never actually get hungry, especially if I'm stuck in a hotel using up minimal energy, that's good to know. I feel good though.
+It's $75 a day, so that's not too bad, but food is $10 a meal. The food is pretty good, on the 4th day I finally ordered some (not because I was hungry, but just out of curiosity). Apparently I never actually get hungry, especially if I'm stuck in a hotel using up minimal energy, that's good to know. I feel good though.
 
-I've been calling up my partners and video-chatting with them; it's been great, it's crazy that I can be on the other side of the world and still talk to people back home and see their faces. If I haven't contacted you yet and you want to schedule a quarrantine chat, let me know.
+I've been calling up my partners and video-chatting with them; it's been great, it's crazy that I can be on the other side of the world and still talk to people back home and see their faces. If I haven't contacted you yet and you want to schedule a quarantine chat, let me know.
 
 ## Plans
 God worked out miracles to get me here to Cambodia and I still don't quite believe it how things worked out. I'm gonna stay in the city renewing my visa and other things for a bit, then I'll live in the north with Amy and Thanak and Samuel. I'll start language school September 27th and will do that in the evenings after practicing and ministering in the mornings.
