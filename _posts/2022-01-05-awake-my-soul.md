@@ -20,7 +20,7 @@ The party finally ended at 1 or so in the morning and 45 people camped there. We
 
 ## My Past; Finding my Emotions
 
-I thought I was unemotional person, but upon writing this, my constant flow of tears proved otherwise. Not that I'm sad, I'm just overwhelmed with joy and love towards my family. I'm fine.
+I thought I was an unemotional person, but upon writing this, my constant flow of tears proved otherwise. Not that I'm sad, I'm just overwhelmed with joy and love towards my family. I'm fine.
 
 I carry around a photo of my family in my wallet, I show it to people because no matter the distance, it's who I am: I'm not an individual but a family.
 
