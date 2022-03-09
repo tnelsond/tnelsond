@@ -5,9 +5,7 @@ date:   2022-03-09 01:28:38 +0600
 tags: cambodia
 ---
 
-### Spiritual stuff
-
- If you had to give up your sense of humor, your hobbies, your family, your favorite foods, and even your own native language, could you? 
+If you had to give up your sense of humor, your hobbies, your family, your favorite foods, and even your own native language, could you? 
  I used to be afraid of losing all the things about me that I used to think were so important, but now I see they're just superficial and not who I am. 
 
 The Apostle Paul says: **“To the weak I became weak, that I might win the weak. I have become all things to all people, that by all means I might save some. I do it all for the sake of the gospel, that I may share with them in its blessings.”** (1 Corinthians 9:22-23, ESV2011)
@@ -16,13 +14,13 @@ The Apostle Paul says: **“To the weak I became weak, that I might win the weak
 
  We're not called to be ourselves, Jesus calls us to deny ourselves. 
 
-<iframe width="460" height="315" src="https://www.youtube.com/embed/ZylDOgrwlho?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="360" height="315" src="https://www.youtube.com/embed/ZylDOgrwlho?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Language
+## Language
 
 I'm comprehending a lot more when listening in the language and am starting to read and write using the Khmer "alphabet."
 
-### Children's Ministry
+## Children's Ministry
 
 ![Kantuot](/assets/pics/2022-03-1.jpg)
 
@@ -46,15 +44,15 @@ We also played soccer and I gave a lot of piggyback rides and flipped a lot of k
 
 I could say some cliches about how important kids are, but it's true. There's nothing better than knowing Christ from a young age and being able to grow up knowing how loved you are. The kingdom of heaven belongs to those who will humble themselves like little children.
  
-### Administration Stuff
+## Administration Stuff
 
 Overland Missions has overhauled some stuff on their website and now you can [register an account online](https://overlandmissions.com) and track your donations and update your payment information there. Now you'll only have to phone the office if you want to. It's gonna reduce the load on our office staff and enable us to grow as an organization and take the gospel further.
 
-### Base
+## Base
 
 We're looking for land to build a base and that's an exciting next step for our team as it grows. I made this [page](https://overlandmissions.com/donate/basecambodia) that talks about it and has a donation option.
 
-### Closing
+## Closing
 
 My biggest regret is the time difference (I'm 13 hours ahead of Iowa) and my schedule and how difficult it is to keep in contact with you my friends, partners, and family. I would love to setup some timeslots where we can voice/video chat and catch up.
 

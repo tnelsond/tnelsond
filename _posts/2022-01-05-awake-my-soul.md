@@ -5,7 +5,7 @@ date:   2022-01-05 01:28:38 +0600
 tags: cambodia
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n6o35Dnio6Q?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="360" height="315" src="https://www.youtube.com/embed/n6o35Dnio6Q?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 My coworker/friend/brother Thanak made this incredible video.
 
