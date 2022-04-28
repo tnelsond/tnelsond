@@ -22,7 +22,7 @@ We're sons of God, priests of God, heirs of God.
 
 > "and if children, then heirs; heirs of God, and joint heirs with Christ; if indeed we suffer with him, that we may also be glorified with him." *Romans 8:17*
 
-I'm a missionary with [Overland Missions](http://overlandmissions.com) in Cambodia (I haven't gotten there yet, but I'm building a team to get me there).
+I'm a missionary with [Overland Missions](http://overlandmissions.com) in Cambodia.
 
 If there's any way I can help you, reach out:
 

@@ -15,17 +15,13 @@ The best thing you can do for me is to pray. And I'll be praying for you as well
 Financially
 ==========
 
-Note that in order for any donations to be counted towards my budget (I'm not permitted to launch until I've reached my goal) they have to either be annual gifts or monthly.
+Note that in order for any donations to be counted towards my budget they have to either be annual gifts or monthly.
 
 eCheck or Card
 ---------------
 
 Go to: [Overlandmissions.com/donate](
-https://www.overlandmissions.com/donate/?memo=3302)
-And just make sure to put
-in the *Donation Memo* line.
-
-    3302 - Thomas Downs
+https://www.overlandmissions.com/donate/tommyd)
 
 or Bill Pay or Physical Check
 --------
