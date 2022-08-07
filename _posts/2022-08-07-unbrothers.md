@@ -76,6 +76,7 @@ Baptism
 =====
 
 We've had a couple baptism events and they've been amazing. 5 people got baptized for the first one and 8 for the second. The church in Kantuout and others are growing and it's amazing to see the believers mature and doing the work of the ministry. I'm so proud of them.
+![Baptism](/assets/pics/2022-08/baptism.jpg)
 
 Pray for
 ====
