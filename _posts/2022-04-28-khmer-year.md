@@ -1,20 +1,14 @@
 ---
 layout: post
-title:  "Happy Khmer New Year"
-date:   2022-04-28 01:28:38 +0600
+title:  "Khmer New Year"
+date:   2022-04-28 02:28:38 +0600
 tags: cambodia
 ---
-
-
-What have I done?!
-===
 
 I've always disliked matchmakers and people that pretend to be so. But since my coworkers Micah and Tori were already inseparable I don't feel too much guilt over what I did.
 
 Micah and Tori are best friends, they do everything together, this creates suspicions among everyone that they're dating or married, something they tried hard to dispel.
 Sometimes I believed them that they weren't in a relationship, but clues would constantly pop up.
-
-![Micah and Tori](/assets/pics/2022/mtori.jpg)
 
 In February Micah told me that his parents and Tori's parents were coming to visit them in May. 
  I asked if they were coming for their wedding but Micah denied it and insisted that he and Tori were just good friends. I've seen enough of Micah and Tori every day in our language school zoom classes to know that the strength of their relationship would never allow either of them to get involved with anyone else despite their hesitancy with each other.
@@ -51,3 +45,4 @@ Pray
 Love you all, keep the faith,
 
 Tommy Downs
+
