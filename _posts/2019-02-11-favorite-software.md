@@ -11,7 +11,7 @@ Graphics
 =====
 - [Blender](http://blender.org) - 3D modeling, animation, and video editor
 - [Gimp](http://gimp.org) - Photo manipulation
-- [Krita](http://krita.org) - Photo manipulation and digital painting
+- [Krita](http://krita.org) - Photo manipulation and digital painting. Also runs on Android if you're like me and do everything on your phone.
 - [MyPaint](http://mypaint.org) - Digital painting
 - [Inkscape](http://inkscape.org) - Vector graphics editor
 
@@ -42,6 +42,7 @@ Android Apps
 - [Newpipe](http://newpipe.schabi.org) - Alternative Youtube browser. Downloading, external players, and no ads. (F-Droid)
 - [Andbible](http://andbible.github.io) - Offline Bible App (F-droid or Google Play)
 - [Voice](http://github.com/PaulWoitaschek/Voice) - Minimalistic Audio Book Player (F-droid or Google Play)
+- [Termux](https://termux.dev/en/) - A linux environment on your phone.
 
 Operating Systems
 ====

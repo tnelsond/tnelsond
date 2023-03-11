@@ -5,6 +5,8 @@ date:   2022-04-28 02:28:38 +0600
 tags: cambodia
 ---
 
+> EDIT March 11th 2023: Wow, that was terrible, why did I ever do that? We all make mistakes, this is one I've grown from, but it caused a lot of destruction. I was lauded for it at the time before it all went south.
+
 I've always disliked matchmakers and people that pretend to be so. But since my coworkers Micah and Tori were already inseparable I don't feel too much guilt over what I did.
 
 Micah and Tori are best friends, they do everything together, this creates suspicions among everyone that they're dating or married, something they tried hard to dispel.
@@ -45,4 +47,3 @@ Pray
 Love you all, keep the faith,
 
 Tommy Downs
-
