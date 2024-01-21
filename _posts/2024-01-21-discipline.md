@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Accountable"
+title:  "Discipline"
 date:   2024-01-21 01:28:38 +0600
 tags: cambodia
 ---
