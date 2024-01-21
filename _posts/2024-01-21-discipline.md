@@ -19,15 +19,17 @@ But I saw that my permissiveness was not grace, it was indifference, neglect, an
 
 ![The Oddar Meanchey team](/assets/pics/2023/noel/oddarnoel.jpg)
 
-Just a month ago I had just 3 Cambodians under me, but now on behalf of Charles, Matt, and Kim, I now have 12 (and an American). So with the help of their advice, I implemented a stricter schedule with consequences for tardiness. To my amazement, they immediately took to it and become amazingly punctual, attentive and early people. (I realized that it was never their fault, it was our fault for not doing things differently)
+Just a month ago I had just 3 Cambodians under me, but now because Charles, Matt, and Kim are in the States, I now have 12 (and an American). So with the help of their advice, I implemented a stricter schedule with consequences for tardiness. To my amazement, they immediately took to it and become amazingly punctual, attentive and early people. (I realized that it was never their fault, it was our fault for not doing things differently)
 
 ![](/assets/pics/2023/noel/teamnoel.jpg)
 
-So finally, I also then took responsibility for my little team of 5 and apologized for not leading them better, I then corrected my disciples for the problems that we've had for almost a year. They received it rather well and we're growing stronger now.
+So finally, I also then took responsibility for my little team of 5 (we gained one) and apologized for not leading them better, I then corrected my disciples for the problems that we've had for almost a year. They received it rather well and we're growing stronger now.
 
 Before I had thought the issues were their fault, but I've come to realize that it was merely my fault for being a weak leader. To be a leader is to take responsibility.
 
-It's contrary to my nature, but I've been confronting just about everyone (in a gentle way) so that they can wake up and they can move forward. I would rather sit back and let other people make all the decisions, but I have a responsibility and to not accept it would cause grief and disorder to us all.
+It's contrary to my nature, but I've been confronting just about everyone (in a gentle way) so that they can wake up and they can move forward. I would rather sit back and let other people make all the decisions, but I have responsibility now and to not accept it would cause grief and disorder to us all.
+
+### Ministry
 
 ![](/assets/pics/2023/noel/ampilnoel.jpg)
 
