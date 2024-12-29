@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Writing"
-permalink: "/writing"
+permalink: "/writing/"
 tags: writing
 ---
 
