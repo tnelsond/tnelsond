@@ -8,7 +8,7 @@ permalink: /about/
 
 I'm the 3rd oldest in a large family with 6 sisters, and 3 brothers all from the same parents. We're all best friends and it's been the biggest blessing in my life apart from knowing Jesus Christ.
 
-![Family Picture](/assets/pics/family2024.jpg)
+{% include figure popup=true image_path="/assets/pics/fam2025.jpg" caption="New family photo." %}
 
 My name is Thomas Nelson Downs, named after my great uncle [*"The King of Koins"*](https://en.wikipedia.org/wiki/Thomas_Nelson_Downs). My friends call me *Tommy*, teachers call me *Tom*, telemarketers call me *Thomas*, but Jesus calls me His. I once wanted a name for myself, or to accomplish some great work of intellect or engineering, but I now see that that was meaningless and fleeting; now all that I care for is to exalt the name of Christ and raise people up to full maturity in Him.
 
