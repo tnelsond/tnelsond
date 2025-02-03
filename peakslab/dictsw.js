@@ -1,4 +1,4 @@
-let cache_name = 'tnedict 0.0.4';
+let cache_name = 'peakslab 0.0.5';
 let urls_to_cache = [
  '/index.html',
  '/dict.js',

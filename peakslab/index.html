@@ -37,6 +37,7 @@
   <body>
 <main class="container">
 	<h1>Peakslab Dictionary</h1>
+	<div id="load"><h1>Loading...</h1></div>
 	  <div class="row">
 		  <div class="col-3">
  <label for="tablesel">Dictionary:</label>
@@ -112,6 +113,7 @@
     var tInit = function(){
 	console.log("MAIN: init message sent to worker");
 	dcol.innerHTML = qcol.innerHTML = "";
+	document.getElementById("load").innerHTML = "";
 	w.postMessage(".init: " + tsel.value);
     };
 
