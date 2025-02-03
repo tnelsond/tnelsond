@@ -1,3 +1,4 @@
+/*
 let cache_name = 'peakslab 0.0.5';
 let urls_to_cache = [
  '/index.html',
@@ -10,7 +11,7 @@ self.addEventListener('install', (e) => {
   return cache.addAll(urls_to_cache)
  }) )
 })
-
+*/
 /*
 self.addEventListener('fetch', (e) => {
  e.respondWith(caches.match(e.request).then((response) => {
