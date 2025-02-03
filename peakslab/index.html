@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <title>Peakslab Dictionary</title>
+<link rel="stylesheet" href="chota.css">
+<style>
+:root {
+  --color-primary: #1dda50; /* brand color */
+  --bg-color: #fdfff0;
+}
+    body.dark {
+      --bg-color: #000;
+      --bg-secondary-color: #131316;
+      --font-color: #f5f5f5;
+      --color-grey: #ccc;
+      --color-darkGrey: #777;
+    }
+    .entry{
+	    background-color: white;
+	    border: 5px double #444400;
+	    border-bottom: 7px solid black;
+	    border-radius: 10px;
+	    padding: .5em;
+    }
+    .hent{
+	    margin-bottom: 0px;
+	    margin-top: 0px;
+	    color: #003400;
+    }
+  </style>
+  </head>
+  <body>
+<main class="container">
+	<h1>Peakslab Dictionary</h1>
+	  <div class="row">
+		  <div class="col-3">
+ <label for="tablesel">Dictionary:</label>
+  <select name="tablesel" id="tablesel" value="headnathc" onchange="javascript:tInit(this)">
+  </select>
+		  </div>
+		  <div class="col-3">
+ <label for="qcol">Search Column:</label>
+  <select name="qcol" id="qcol">
+  </select>
+		  <details id="dcol" class="card dropdown" value="columns">
+	  </details>
+	  </div>
+	</div>
+	<p class="grouped">
+       <input type="search" id="q" name="search" placeholder="search" onsearch="javascript:tSearch(this)" required autofocus>
+<button class="button icon-only" onclick="javascript:tSearch(this)">
+  <img src="search.svg?size=24">
+</button>
+	</p>
+    <div id="tout">
+    </div>
+<script>
+    const q = document.getElementById("q");
+    const tsel = document.getElementById("tablesel");
+    const qcol = document.getElementById("qcol");
+    const dcol = document.getElementById("dcol");
+    const w = new Worker("dict.js?sqlite3.dir=jswasm&"// + urlParams
+                           /* Note the URL argument on that name. See
+                              the notes in demo-123.js (search for
+                              "importScripts") for why we need
+                              that. */);
+     (function(){
+      var color = false;
+      const logHtml = function(cssClass,...args){
+	if(cssClass == 'entry'){
+          const ln = document.createElement('div');
+          ln.classList.add('entry');
+		ln.innerHTML = args;
+//        ln.append(document.createTextNode(args.join(' ')));
+          document.getElementById('tout').append(ln);
+	  color = !color;
+	}else if(cssClass == 'refresh'){
+		tInit();
+	}else if(cssClass == 'init'){
+		qcol.innerHTML += '<option value="' + args + '">' + args + '</option>';
+		dcol.innerHTML += '<input type="checkbox" value="' + args + '" checked><label>' + args + '</label><br>';
+	}else if(cssClass == 'dictlist'){
+		tsel.innerHTML += args;
+	}else{
+	const ln = document.createElement('div');
+        if(cssClass) ln.classList.add(cssClass);
+        ln.append(document.createTextNode(args.join(' ')));
+	document.getElementById("tbug").append(ln);
+	}
+      };
+
+      //const urlParams = new URL(globalThis.location.href).searchParams;
+      //document.getElementById('input').value = urlParams.get("search");
+      
+      w.onmessage = function({data}){
+	console.log("MAIN: Message received from worker");
+        switch(data.type){
+            case 'log':
+              logHtml(data.payload.cssClass, ...data.payload.args);
+              break;
+            default:
+              logHtml('bg-error',"Unhandled message:",data.type);
+        };
+      };
+    })();
+
+    var tInit = function(){
+	console.log("MAIN: init message sent to worker");
+	dcol.innerHTML = qcol.innerHTML = "";
+	w.postMessage(".init: " + tsel.value);
+    };
+
+    var tSearch = function(){
+	console.log("MAIN: Message posted to worker");
+	document.getElementById("tout").innerHTML = '';
+	const dlist = [];
+	dcol.childNodes.forEach(
+		function(node){
+			if(node.tagName == 'INPUT' && node.checked){
+			dlist.push(node.value);
+			}
+		}
+	);
+	const dres = dlist.filter(x => typeof x === 'string' && x.length > 0).join(", ");
+	w.postMessage("SELECT " + dres + " FROM " + tsel.value + " WHERE " + qcol.value + " LIKE '%" + q.value + "%' order by " + qcol.value + " desc limit 200;");
+      }
+
+if('serviceWorker' in navigator) {
+ window.addEventListener('load', () => {
+  navigator.serviceWorker.register('dictsw.js')
+  .then((registration) => {
+    console.log("Service Worker registration successful")
+   }, (err) => {
+    console.log("Registration failed")
+   })
+  })
+}
+  </script>
+  <div id="tbug" class="bd-error"></div>
+</main>
+  </body>
+</html>

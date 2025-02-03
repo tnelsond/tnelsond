@@ -1,0 +1,9 @@
+{
+  "name": "Peakslab",
+  "short_name": "PSlab",
+  "theme_color": "#33ff00",
+  "background_color": "#000000",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/"
+}
