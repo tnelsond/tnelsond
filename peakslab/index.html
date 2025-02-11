@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="manifest" href="manifest.json">
     <title>PeakSlab Dictionary</title>
 <link rel="stylesheet" href="chota.css">
@@ -167,7 +168,6 @@
 	w.postMessage("SELECT " + dres + " FROM " + tsel.value + " WHERE " + qcol.value + " LIKE '%" + q.value + "%' order by " + qcol.value + " desc limit 200;");
       }
 
-    /*
 if('serviceWorker' in navigator) {
  window.addEventListener('load', () => {
   navigator.serviceWorker.register('dictsw.js')
@@ -178,9 +178,23 @@ if('serviceWorker' in navigator) {
    })
   })
 }
-*/
+
+var tRemoveServiceWorker = function(){
+  console.log("Trying to uninstall Service Worker");
+	if(window.navigator && navigator.serviceWorker) {
+		navigator.serviceWorker.getRegistrations()
+		.then(function(registrations) {
+			for(let registration of registrations) {
+				registration.unregister();
+				console.log("Uninstalled Service Worker");
+			}
+		});
+	}
+}
+
   </script>
   <div id="tbug" class="bd-error"></div>
+	<div class="button error" onclick="javascript:tRemoveServiceWorker(this)">Uninstall</div>
 </main>
   </body>
 </html>

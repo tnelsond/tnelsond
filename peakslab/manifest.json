@@ -5,5 +5,19 @@
   "background_color": "#000000",
   "display": "fullscreen",
   "scope": "/peakslab",
-  "start_url": "/peakslab"
+  "start_url": "/peakslab",
+	"icons": [
+  {
+    "src": "favicon32x32.png",
+    "sizes": "32x32"
+  },
+  {
+    "src": "favicon16x16.png",
+    "sizes": "16x16"
+  },
+  {
+    "src": "favicon128x128.png",
+    "sizes": "128x128"
+  }
+]
 }

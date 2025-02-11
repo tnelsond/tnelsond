@@ -1,17 +1,18 @@
-/*
 let cache_name = 'peakslab 0.0.5';
 let urls_to_cache = [
  '/index.html',
  '/dict.js',
  '/tdict3.db',
+ '/peakslab2.svg',
+ '/chota.css',
  '/jswasm/sqlite3.js',
  '/jswasm/sqlite3.wasm'];
 self.addEventListener('install', (e) => {
+ console.log("[Service Worker] Trying to install");
  e.waitUntil(caches.open(cache_name).then((cache) => {
   return cache.addAll(urls_to_cache)
  }) )
 })
-*/
 /*
 self.addEventListener('fetch', (e) => {
  e.respondWith(caches.match(e.request).then((response) => {
@@ -22,7 +23,6 @@ self.addEventListener('fetch', (e) => {
  }) )
 })*/
 
-/*
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     (async () => {
@@ -38,4 +38,3 @@ self.addEventListener("fetch", (e) => {
     })(),
   );
 });
-*/
