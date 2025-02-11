@@ -1,18 +1,20 @@
-let cache_name = 'peakslab 0.0.5';
+let cache_name = 'peakslab 0.0.7';
 let urls_to_cache = [
  '/index.html',
  '/dict.js',
  '/tdict3.db',
  '/peakslab2.svg',
  '/chota.css',
- '/jswasm/sqlite3.js',
+ '/jswasm/dict.js?sqlite3.dir=jswasm&',
  '/jswasm/sqlite3.wasm'];
+
 self.addEventListener('install', (e) => {
  console.log("[Service Worker] Trying to install");
  e.waitUntil(caches.open(cache_name).then((cache) => {
-  return cache.addAll(urls_to_cache)
+  /*return cache.addAll(urls_to_cache)*/
  }) )
 })
+
 /*
 self.addEventListener('fetch', (e) => {
  e.respondWith(caches.match(e.request).then((response) => {
@@ -21,7 +23,8 @@ self.addEventListener('fetch', (e) => {
   else
    return fetch(e.request)
  }) )
-})*/
+})
+*/
 
 self.addEventListener("fetch", (e) => {
   e.respondWith(
@@ -30,6 +33,7 @@ self.addEventListener("fetch", (e) => {
       console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
       if (r) {
         return r;
+			}
       const response = await fetch(e.request);
       const cache = await caches.open(cache_name);
       console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
