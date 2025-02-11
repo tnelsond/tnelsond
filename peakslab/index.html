@@ -3,23 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <link rel="manifest" href="manifest.json">
-    <title>Peakslab Dictionary</title>
+    <title>PeakSlab Dictionary</title>
 <link rel="stylesheet" href="chota.css">
 <style>
-:root {
-  --color-primary: #1dda50; /* brand color */
-  --bg-color: #fdfff0;
+.dropd {
+  position: relative;
+  display: inline-block;
 }
-    body.dark {
-      --bg-color: #000;
-      --bg-secondary-color: #131316;
-      --font-color: #f5f5f5;
-      --color-grey: #ccc;
-      --color-darkGrey: #777;
-    }
+
+.dropd-content {
+  display: none;
+  position: absolute;
+  background-color: #e9d9a9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropd:hover .dropd-content {
+  display: block;
+}
+    .input{width: 8%;} 
     .entry{
 	    background-color: white;
 	    border: 5px double #444400;
@@ -32,36 +40,62 @@
 	    margin-top: 0px;
 	    color: #003400;
     }
+#load {
+  border: 16px solid #e3e3d3; /* Light grey */
+  border-top: 16px solid #1dda50; /* Blue */
+  border-radius: 50%;
+  display:inline-block;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg);
+}
   </style>
   </head>
   <body>
 <main class="container">
-	<h1>Peakslab Dictionary</h1>
-	<div id="load"><h1>Loading...</h1></div>
-	  <div class="row">
-		  <div class="col-3">
- <label for="tablesel">Dictionary:</label>
-  <select name="tablesel" id="tablesel" value="headnathc" onchange="javascript:tInit(this)">
+	<div id="load"></div>
+	  <table>
+	<tr>
+		  <td>
+  <img src="peakslab2.svg" align="left" alt="Peak Slab" style="padding: 1em">
+  <select align="right" style="width: 8em" name="tablesel" id="tablesel" value="headnathc" onchange="javascript:tInit(this)">
   </select>
-		  </div>
-		  <div class="col-3">
+		  </td>
+			<td>
+		  <div class="dropd">
+			<span class="button">Columns</span>
+			<div id="dcol" class="dropd-content">
+			</div>
+	  </div>
+	</td>
+	</tr>
+	<tr>
+	<td>
+			<label for="q">&nbsp;
+       <input type="search" id="q" name="search" placeholder="search" onsearch="javascript:tSearch(this)" required autofocus>
+</label>
+</td>
+	<td>
  <label for="qcol">Search Column:</label>
   <select name="qcol" id="qcol">
   </select>
-		  <details id="dcol" class="card dropdown" value="columns">
-	  </details>
-	  </div>
-	</div>
-	<p class="grouped">
-       <input type="search" id="q" name="search" placeholder="search" onsearch="javascript:tSearch(this)" required autofocus>
-<button class="button icon-only" onclick="javascript:tSearch(this)">
-  <img src="search.svg?size=24">
-</button>
-	</p>
+	</td>
+	</tr>
+</table>
     <div id="tout">
     </div>
 <script>
     const q = document.getElementById("q");
+		q.addEventListener("keypress", function(event){
+			if(event.key === "Enter"){
+				event.preventDefault();
+				tSearch();
+			}
+		});
     const tsel = document.getElementById("tablesel");
     const qcol = document.getElementById("qcol");
     const dcol = document.getElementById("dcol");
@@ -110,11 +144,12 @@
       };
     })();
 
-    var tInit = function(){
-	console.log("MAIN: init message sent to worker");
-	dcol.innerHTML = qcol.innerHTML = "";
-	document.getElementById("load").innerHTML = "";
-	w.postMessage(".init: " + tsel.value);
+  var tInit = function(){
+			console.log("MAIN: init message sent to worker");
+			dcol.innerHTML = qcol.innerHTML = "";
+			let lo = document.getElementById("load");
+			if(lo) lo.remove();
+			w.postMessage(".init: " + tsel.value);
     };
 
     var tSearch = function(){
