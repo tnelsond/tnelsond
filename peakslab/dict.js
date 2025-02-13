@@ -162,7 +162,7 @@
     //console.log('sqlite3 =',sqlite3);
     log("Done initializing. Running demo...");
     try {
-      demo1(sqlite3, 'tdict4.db.html');
+      demo1(sqlite3, 'tdict5.db.html');
     }catch(e){
       error("Exception:",e.message);
     }

@@ -1,8 +1,8 @@
-let cache_name = 'peakslab 0.0.8';
+let cache_name = 'peakslab 0.0.9';
 let urls_to_cache = [
  '/index.html',
  '/dict.js',
- '/tdict4.db.html',
+ '/tdict5.db.html',
  '/peakslab2.svg',
  '/chota.css',
  '/jswasm/dict.js?sqlite3.dir=jswasm&',
