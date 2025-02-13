@@ -1,8 +1,8 @@
-let cache_name = 'peakslab 0.0.7';
+let cache_name = 'peakslab 0.0.8';
 let urls_to_cache = [
  '/index.html',
  '/dict.js',
- '/tdict3.db',
+ '/tdict4.db.html',
  '/peakslab2.svg',
  '/chota.css',
  '/jswasm/dict.js?sqlite3.dir=jswasm&',
@@ -11,7 +11,7 @@ let urls_to_cache = [
 self.addEventListener('install', (e) => {
  console.log("[Service Worker] Trying to install");
  e.waitUntil(caches.open(cache_name).then((cache) => {
-  /*return cache.addAll(urls_to_cache)*/
+  return cache.addAll(urls_to_cache);
  }) )
 })
 

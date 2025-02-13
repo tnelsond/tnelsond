@@ -10,6 +10,9 @@
     <title>PeakSlab Dictionary</title>
 <link rel="stylesheet" href="chota.css">
 <style>
+body{
+	background-color: #f0ffe6;
+}
 .dropd {
   position: relative;
   display: inline-block;
@@ -31,9 +34,10 @@
     .input{width: 8%;} 
     .entry{
 	    background-color: white;
-	    border: 5px double #444400;
-	    border-bottom: 7px solid black;
-	    border-radius: 10px;
+	    border: 2px dashed #deeede;
+			border-radius: 5px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			margin-bottom: .5em;
 	    padding: .5em;
     }
     .hent{
@@ -71,6 +75,13 @@
 			<span class="button">Columns</span>
 			<div id="dcol" class="dropd-content">
 			</div>
+			</div>
+		  <div class="dropd">
+			<span class="button">Options</span>
+			<div class="dropd-content">
+		<input type="checkbox" id="bcheck" value="b" checked><label>Beginning</label><br></input>
+		<input type="checkbox" id="echeck" value="e"><label>Ending</label><br></input>
+			</div>
 	  </div>
 	</td>
 	</tr>
@@ -99,6 +110,8 @@
 		});
     const tsel = document.getElementById("tablesel");
     const qcol = document.getElementById("qcol");
+    const bcheck = document.getElementById("bcheck");
+    const echeck = document.getElementById("echeck");
     const dcol = document.getElementById("dcol");
     const w = new Worker("dict.js?sqlite3.dir=jswasm&"// + urlParams
                            /* Note the URL argument on that name. See
@@ -165,7 +178,7 @@
 		}
 	);
 	const dres = dlist.filter(x => typeof x === 'string' && x.length > 0).join(", ");
-	w.postMessage("SELECT " + dres + " FROM " + tsel.value + " WHERE " + qcol.value + " LIKE '%" + q.value + "%' order by " + qcol.value + " desc limit 200;");
+	w.postMessage("SELECT " + dres + " FROM " + tsel.value + " WHERE " + qcol.value + " LIKE " + (! bcheck.checked ? "'%" : "'") + q.value + (! echeck.checked ? "%'" : "'") + " order by " + qcol.value + " desc limit 200;");
       }
 
 const registerServiceWorker = async () => {

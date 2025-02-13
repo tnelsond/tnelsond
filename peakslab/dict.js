@@ -72,13 +72,14 @@
 	  console.log(lopokup);
 	  let res = "";
 	  for(let i=0; i<row.length; ++i){
-	 	if(row[i])
-			var sty = dstyle[lopokup[i]];
-			if(sty){
-				res += sty.replace("###", row[i]);
-			}
-			else{
-				res += row[i] + '<br />';
+			if(row[i]){
+				let sty = dstyle[lopokup[i]];
+				if(sty){
+					res += sty.replace("###", row[i]);
+				}
+				else{
+					res += row[i] + '<br />';
+				}
 			}
 	  }
           addEntry(''+res+'');
@@ -161,7 +162,7 @@
     //console.log('sqlite3 =',sqlite3);
     log("Done initializing. Running demo...");
     try {
-      demo1(sqlite3, 'tdict4.html');
+      demo1(sqlite3, 'tdict4.db.html');
     }catch(e){
       error("Exception:",e.message);
     }
