@@ -12,12 +12,16 @@
     "sizes": "32x32"
   },
   {
+    "src": "favicon64x64.png",
+    "sizes": "64x64"
+  },
+  {
     "src": "favicon16x16.png",
     "sizes": "16x16"
   },
   {
-    "src": "favicon128x128.png",
-    "sizes": "128x128"
+    "src": "favicon148x148.png",
+    "sizes": "148x148"
   }
 ]
 }
