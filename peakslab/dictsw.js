@@ -1,20 +1,26 @@
-let cache_name = 'peakslab 0.1.2';
+let cache_name = 'peakslab 0.1.4';
 let urls_to_cache = [
- '/index.html',
- '/dict.js',
- '/tdict5.db.html',
- '/peakslab2.svg',
- '/manifest.json',
- '/chota.css',
- '/favicon32x32.png',
- '/favicon64x64.png',
- '/favicon148x148.png',
+ './',
+ 'index.html',
+ 'dict.js',
+ 'tdict5.db.html',
+ 'peakslab2.svg',
+ 'manifest.json',
+ 'chota.css',
+ 'favicon32x32.png',
+ 'favicon64x64.png',
+ 'favicon148x148.png',
  /*'/jswasm/dict.js?sqlite3.dir=jswasm&',*/
- '/jswasm/sqlite3.wasm'];
+ 'jswasm/sqlite3.wasm'];
 
 self.addEventListener('install', (e) => {
  console.log("[Service Worker] Trying to install");
  e.waitUntil(caches.open(cache_name).then((cache) => {
+    /*const stack = [];
+    urls_to_cache.forEach(file => stack.push(
+        await cache.add(file).catch(_=>console.error(`can't load ${file} to cache`))
+    ));
+    return Promise.all(stack);*/
   return cache.addAll(urls_to_cache);
  }) )
 })
