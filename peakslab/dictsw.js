@@ -1,9 +1,10 @@
-let cache_name = 'peakslab 0.1.1';
+let cache_name = 'peakslab 0.1.2';
 let urls_to_cache = [
  '/index.html',
  '/dict.js',
  '/tdict5.db.html',
  '/peakslab2.svg',
+ '/manifest.json',
  '/chota.css',
  '/favicon32x32.png',
  '/favicon64x64.png',
