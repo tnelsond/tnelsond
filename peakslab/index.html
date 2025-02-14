@@ -18,6 +18,11 @@ body{
   display: inline-block;
 }
 
+.highlight{
+	background: yellow;
+	font-size: 110%;
+}
+
 .dropd-content {
   display: none;
   position: absolute;
@@ -79,22 +84,31 @@ body{
 		  <div class="dropd">
 			<span class="button">Options</span>
 			<div class="dropd-content">
+		<input type="checkbox" id="desc" value="b"><label>Descending Order</label><br></input>
 		<input type="checkbox" id="bcheck" value="b" checked><label>Beginning</label><br></input>
 		<input type="checkbox" id="echeck" value="e"><label>Ending</label><br></input>
+<label for="limit">  <input type="range" min="5" max="1000" value="50" class="slider" id="limit">
+Results <span id="limitd">50</span></label>
 			</div>
 	  </div>
 	</td>
 	</tr>
 	<tr>
 	<td>
-			<label for="q">&nbsp;
-       <input type="search" id="q" name="search" placeholder="search" onsearch="javascript:tSearch(this)" required autofocus>
-</label>
+       <input type="search" id="q" name="search" placeholder="search" onsearch="javascript:tSearch(0)" required autofocus>
 </td>
 	<td>
+			<table>
+			<tr>
+			<td>
+			<span class="button success" align="left" onclick="javascript:tSearch(1)">ALL</span>
+	</td><td>
  <label for="qcol">Search Column:</label>
-  <select name="qcol" id="qcol">
+  <select name="qcol" id="qcol" align="left">
   </select>
+	</td>
+	</tr>
+	</table>
 	</td>
 	</tr>
 </table>
@@ -105,11 +119,17 @@ body{
 		q.addEventListener("keypress", function(event){
 			if(event.key === "Enter"){
 				event.preventDefault();
-				tSearch();
+				tSearch(0);
 			}
 		});
     const tsel = document.getElementById("tablesel");
     const qcol = document.getElementById("qcol");
+    const desc = document.getElementById("desc");
+    const limitd = document.getElementById("limitd");
+    const limit = document.getElementById("limit");
+		limit.oninput = function(){
+			limitd.innerHTML = this.value;
+		}
     const bcheck = document.getElementById("bcheck");
     const echeck = document.getElementById("echeck");
     const dcol = document.getElementById("dcol");
@@ -166,7 +186,7 @@ body{
 			w.postMessage(".init: " + tsel.value);
     };
 
-    var tSearch = function(){
+    var tSearch = function(all){
 	console.log("MAIN: Message posted to worker");
 	document.getElementById("tout").innerHTML = '';
 	const dlist = [];
@@ -178,7 +198,7 @@ body{
 		}
 	);
 	const dres = dlist.filter(x => typeof x === 'string' && x.length > 0).join(", ");
-	w.postMessage("SELECT " + dres + " FROM " + tsel.value + " WHERE " + qcol.value + " LIKE " + (! bcheck.checked ? "'%" : "'") + q.value + (! echeck.checked ? "%'" : "'") + " order by " + qcol.value + " desc limit 200;");
+	w.postMessage("SELECT " + dres + " FROM " + tsel.value + " WHERE " + qcol.value + " LIKE " + (! bcheck.checked ? "'%" : "'") + q.value + (! echeck.checked ? "%'" : "'") + " order by " + qcol.value + (desc.checked ? " desc" : " asc") + " limit " + limit.value + ";");
       }
 
 const registerServiceWorker = async () => {

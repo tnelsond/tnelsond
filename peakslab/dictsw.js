@@ -1,11 +1,14 @@
-let cache_name = 'peakslab 0.0.9';
+let cache_name = 'peakslab 0.1.1';
 let urls_to_cache = [
  '/index.html',
  '/dict.js',
  '/tdict5.db.html',
  '/peakslab2.svg',
  '/chota.css',
- '/jswasm/dict.js?sqlite3.dir=jswasm&',
+ '/favicon32x32.png',
+ '/favicon64x64.png',
+ '/favicon148x148.png',
+ /*'/jswasm/dict.js?sqlite3.dir=jswasm&',*/
  '/jswasm/sqlite3.wasm'];
 
 self.addEventListener('install', (e) => {
@@ -14,6 +17,32 @@ self.addEventListener('install', (e) => {
   return cache.addAll(urls_to_cache);
  }) )
 })
+
+self.addEventListener('activate', event => {
+  const cacheWhitelist = [cache_name];
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+self.addEventListener('fetch', event => {
+	console.log(`[Service Worker] Fetching resource: ${event.request.url}`);
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request).catch(() => {
+        return caches.match('/index.html');
+      });
+    })
+  );
+});
 
 /*
 self.addEventListener('fetch', (e) => {
@@ -25,6 +54,13 @@ self.addEventListener('fetch', (e) => {
  }) )
 })
 */
+/*
+self.tuninstall = function(){
+	caches.keys().then(function(names) {
+			for (let name of names)
+					caches.delete(name);
+	});
+}
 
 self.addEventListener("fetch", (e) => {
   e.respondWith(
@@ -42,3 +78,4 @@ self.addEventListener("fetch", (e) => {
     })(),
   );
 });
+*/

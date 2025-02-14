@@ -48,6 +48,7 @@
   dstyle["ckhsv"] = '<span style="color: purple">###</span><sup>ckhsv</sup> ';
   dstyle["ckhov"] = '<span style="color: green">###</span><sup>ckhov</sup> ';
   dstyle["cchrist"] = '<span style="color: blue">###</span><sup>cchrist</sup> ';
+  dstyle["m"] = '<span style="color: #770066">###</span> ';
 
   onmessage = (e) => {
     console.log("Worker: Message received from main script#: " + e.data);
@@ -63,16 +64,22 @@
         }.bind({counter: 0})
       });
       }else{
+			console.log("Worker:" + e.data);
+			const lopokup = e.data.match(/SELECT (.*) FROM/)[1].split(", ");
+			const que = ("^" + e.data.match(/LIKE '(.*)' /)[1] + "$").replace('^%', '').replace('%$', '').replace('_', '.');
+			console.log("query!: " +  que);
+			const quer = new RegExp(que, "gi");
+			console.log(quer);
+			console.log(lopokup);
       db.exec({
         sql: e.data,
         rowMode: 'array', // 'array' (default), 'object', or 'stmt'
         callback: function(row){
  	  ++this.counter;
-	  const lopokup = e.data.match(/SELECT (.*) FROM/)[1].split(", ");
-	  console.log(lopokup);
 	  let res = "";
 	  for(let i=0; i<row.length; ++i){
 			if(row[i]){
+				row[i] = row[i].toString().replace(quer, "<span class=\"highlight\">\$&</span>");
 				let sty = dstyle[lopokup[i]];
 				if(sty){
 					res += sty.replace("###", row[i]);
@@ -113,7 +120,7 @@
         db.checkRc(rc);
 
 	db.exec({
-        sql: "SELECT name FROM sqlite_master WHERE type='table'",
+        sql: "SELECT name FROM sqlite_master WHERE type='table' order by name asc;",
         rowMode: 'array', // 'array' (default), 'object', or 'stmt'
         callback: function(row){
           logHtml("dictlist",
