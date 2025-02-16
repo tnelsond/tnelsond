@@ -48,7 +48,10 @@
     dstyle["ckhsv"] = '<span style="color: purple">###</span><sup>ckhsv</sup> ';
     dstyle["ckhov"] = '<span style="color: green">###</span><sup>ckhov</sup> ';
     dstyle["cchrist"] = '<span style="color: blue">###</span><sup>cchrist</sup> ';
+    dstyle["lyrics"] = '<p style="color:#000044">###</p>';
+    dstyle["misc"] = '<span style="color: #662200">###</span> ';
     dstyle["m"] = '<span style="color: #770066">###</span> ';
+    dstyle["context"] = '<details class="context"><h2>Words Before:</h2>###</details> ';
 
     onmessage = (e) => {
         console.log("Worker: Message received from main script#: " + e.data);
@@ -167,7 +170,7 @@
             //console.log('sqlite3 =',sqlite3);
             log("Done initializing. Running demo...");
             try {
-                demo1(sqlite3, "tdict5.db.html");
+                demo1(sqlite3, "tdict7.db.html");
             } catch (e) {
                 error("Exception:", e.message);
             }
