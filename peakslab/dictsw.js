@@ -1,7 +1,6 @@
-let cache_name = 'peakslab 0.1.9';
+let cache_name = 'peakslab 0.2.0';
 let urls_to_cache = [
  './',
-/* 'index.html',*/
  'tdict7.db.html',
  'peakslab.svg',
  'manifest.json',
@@ -45,7 +44,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
       return response || fetch(event.request).catch(() => {
-        return caches.match('/index.html');
+        return caches.match('./');
       });
     })
   );
