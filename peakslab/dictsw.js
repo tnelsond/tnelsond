@@ -1,4 +1,4 @@
-let cache_name = 'peakslab 0.2.0';
+let cache_name = 'peakslab 0.2.1';
 let urls_to_cache = [
  './',
  'tdict7.db.html',
@@ -10,6 +10,7 @@ let urls_to_cache = [
  'favicon64x64.png',
  'favicon148x148.png',
  'dict.js?sqlite3.dir=jswasm&',
+ 'jswasm/sqlite3.js',
  'jswasm/sqlite3.wasm'];
 
 self.addEventListener('install', (e) => {
