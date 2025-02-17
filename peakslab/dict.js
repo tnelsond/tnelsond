@@ -73,7 +73,7 @@
             const lopokup = e.data.match(/SELECT (.*) FROM/)[1].split(", ");
             const que = ("^" + e.data.match(/LIKE '(.*)' /)[1] + "$").replace("^%", "").replace("%$", "").replace("_", ".");
             console.log("query!: " + que);
-            const quer = new RegExp(que, "gi");
+            const quer = new RegExp(que, "mgi");
             console.log(quer);
             console.log(lopokup);
             db.exec({
