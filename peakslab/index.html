@@ -167,6 +167,13 @@
                             dcol.innerHTML += '<input type="checkbox" value="' + args + '" checked><label>' + args + "</label><br>";
                         } else if (cssClass == "dictlist") {
                             tsel.innerHTML += args;
+                        } else if (cssClass == "audio") {
+														(async () => {
+															const blob = new Blob([args[0]], { type: 'audio/webm; codecs=opus' })
+															const audio = new Audio(URL.createObjectURL(blob));
+															audio.controls = true;
+															tout.appendChild(audio);
+														})()
                         } else {
                             const ln = document.createElement("div");
                             if (cssClass) ln.classList.add(cssClass);

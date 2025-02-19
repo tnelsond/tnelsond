@@ -68,6 +68,14 @@
                     logHtml("init", row[1]);
                 }.bind({ counter: 0 }),
             });
+							db.exec({
+								sql: "SELECT data from audio where title='កក.ogg';",
+								rowMode: 'object',
+								callback: function(row){
+									log("row ",++this.counter,"=",JSON.stringify(row.data) + "\n" + typeof(row));
+									sendAudio(row.data);
+								}.bind({counter: 0})
+							});
         } else {
             console.log("Worker:" + e.data);
             const lopokup = e.data.match(/SELECT (.*) FROM/)[1].split(", ");
@@ -102,6 +110,7 @@
 
     const log = (...args) => logHtml("", ...args);
     const addEntry = (...args) => logHtml("entry", ...args);
+    const sendAudio = (...args) => logHtml("audio", ...args);
     const warn = (...args) => logHtml("bg-warning", ...args);
     const error = (...args) => logHtml("bd-error", ...args);
     var db;
@@ -172,7 +181,7 @@
             //console.log('sqlite3 =',sqlite3);
             log("Done initializing. Running demo...");
             try {
-                demo1(sqlite3, "tdict7.db.html");
+                demo1(sqlite3, "tdict8.db.html");
             } catch (e) {
                 error("Exception:", e.message);
             }
