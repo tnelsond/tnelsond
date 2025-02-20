@@ -41,9 +41,9 @@
     const dstyle = {};
     dstyle["kh"] = '<h3 class="hent">###</h3>';
     dstyle["w"] = '<h3 class="hent">###</h3>';
-    dstyle["h97"] = '<p style="color: #240074"><span class="tag is-small">Headley 97</span><br>###</p>';
-    dstyle["h77"] = '<p style="color: #007400"><span class="tag is-small">Headley 77</span><br>###</p>';
-    dstyle["khdef"] = '<p><span class="tag is-small">Chuon Nath 2023</span><br>###</p>';
+    dstyle["headley97"] = '<p style="color: #240074"><span class="tag is-small">Headley 97</span><br>###</p>';
+    dstyle["headley77"] = '<p style="color: #007400"><span class="tag is-small">Headley 77</span><br>###</p>';
+    dstyle["khdef"] = '<p style="color: #003333"><span class="tag is-small">Chuon Nath 2023</span><br>###</p>';
     dstyle["def"] = '<p><span class="tag is-small">Sonveasna</span><br>###</p>';
     dstyle["khph"] = dstyle["khpos"] = '<p style="color: #740000">###</p>';
     dstyle["csea"] = '<span style="color: red">###</span><sup>csea</sup> ';
@@ -86,7 +86,6 @@
 							sql: "SELECT data from audio where title='" + media + "';",
 							rowMode: 'object',
 							callback: function(row){
-								log("row ",++this.counter,"=",JSON.stringify(row.data) + "\n" + typeof(row));
 								sendAudio(id, row.data);
 							}.bind({counter: 0})
 						});
