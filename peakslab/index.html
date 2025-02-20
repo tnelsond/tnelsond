@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png" />
         <link rel="manifest" href="manifest.json" />
-        <title>PeakSlab Dictionary 0.2.1</title>
+        <title>PeakSlab Dictionary 0.2.2</title>
         <link rel="stylesheet" href="chota.css" />
         <style>
             body {
@@ -15,6 +15,9 @@
                 position: relative;
                 display: inline-block;
             }
+						.media{
+							font-size: 50%;
+						}
             .context sub{
                 color: #664400;
             }
@@ -169,10 +172,13 @@
                             tsel.innerHTML += args;
                         } else if (cssClass == "audio") {
 														(async () => {
-															const blob = new Blob([args[0]], { type: 'audio/webm; codecs=opus' })
+															const blob = new Blob([args[1]], { type: 'audio/webm; codecs=opus' })
 															const audio = new Audio(URL.createObjectURL(blob));
 															audio.controls = true;
-															tout.appendChild(audio);
+															audio.autoplay = true;
+															const media = document.getElementById(args[0]);
+															media.innerHTML = "";
+															media.appendChild(audio);
 														})()
                         } else {
                             const ln = document.createElement("div");
@@ -196,7 +202,11 @@
                         }
                     };
                 })();
-
+								var tAudio = function (button) {
+                    console.log("MAIN: request audio message sent to worker");
+										let id = button.parentNode.id;
+                    w.postMessage(".addmedia: " + id + "@" + id);
+								};
                 var tInit = function () {
                     console.log("MAIN: init message sent to worker");
                     dcol.innerHTML = qcol.innerHTML = "";
