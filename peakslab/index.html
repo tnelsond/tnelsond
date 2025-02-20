@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png" />
         <link rel="manifest" href="manifest.json" />
-        <title>PeakSlab Dictionary 0.2.2</title>
+        <title>PeakSlab 0.2.4</title>
         <link rel="stylesheet" href="chota.css" />
         <style>
             body {
-                background-color: #aadacc;
+                background-color: #baeaac;
             }
             .dropd {
                 position: relative;
@@ -63,6 +63,10 @@
                 margin-top: 0px;
                 color: #003400;
             }
+						#logo{
+								position: relative;
+								z-index: -100;
+						}
             #load {
                 border: 16px solid #e3e3d3; /* Light grey */
                 border-top: 16px solid #1dda50; /* Blue */
@@ -88,7 +92,7 @@
             <table>
                 <tr>
                     <td>
-                        <img src="peakslab.svg" alt="Peak Slab" style="padding: 1em;" />
+												<div id="logo"><img src="peakslab.svg" alt="Peak Slab" style="padding: 1em;"></div>
                         <select style="width: 8em;" name="tablesel" id="tablesel" onchange="javascript:tInit(this)"> </select>
                     </td>
                     <td>
@@ -128,6 +132,8 @@
             </table>
             <div id="tout"></div>
             <script>
+								const logo = document.getElementById("logo");
+								logo.innerHTML = document.title.match(/[0-9.]+/) + logo.innerHTML;
                 const q = document.getElementById("q");
                 q.addEventListener("keypress", function (event) {
                     if (event.key === "Enter") {

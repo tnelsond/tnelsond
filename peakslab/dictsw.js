@@ -1,4 +1,4 @@
-let cache_name = 'peakslab 0.2.3';
+let cache_name = 'peakslab 0.2.4';
 let urls_to_cache = [
  './',
  'tdict8.db.html',
