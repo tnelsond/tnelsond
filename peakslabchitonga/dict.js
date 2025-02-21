@@ -41,7 +41,7 @@
     const dstyle = {};
     dstyle["Tonga"] = '<h3 class="hent">###</h3>';
     dstyle["English"] = '<h4 class="hent" style="color:#110044">###</h3>';
-    dstyle["PartOfSpeech"] = '<span class="tag" style="color: #770066">###</span>';
+    dstyle["Position"] = '<span class="tag" style="color: #770066">###</span>';
     dstyle["Class"] = '<span class="tag" style="color: #443300">Class: ###</span>';
     dstyle["Corrupt"] = '<span class="tag" style="color: #770000">Corrupt: ###</span>';
     dstyle["Dialect"] = '<span class="tag" style="color: #002266">Dialect: ###</span>';
@@ -99,6 +99,10 @@
 																temp = temp.replace(/\b16\b/, "16 (Locative Class for 'Ku')");
 																temp = temp.replace(/\b17\b/, "17 (Locative Class for 'Mu')");
 																temp = temp.replace(/\b18\b/, "18 (Locative Class for 'A')");
+															}else if(lopokup[i] == 'Dialect'){
+																temp = temp.replace(/\bI\b/i, "I(Ila)");
+																temp = temp.replace(/\bL\b/i, "L(Lenge)");
+																temp = temp.replace(/\bM\b/i, "M(Mukuni)");
 															}
 															if(sty.match("#####")){
 																res += sty.replaceAll("#####", temp);
