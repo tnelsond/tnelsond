@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png" />
+        <link rel="manifest" href="manifest.json" />
+        <title>PeakSlab Chitonga 0.0.1</title>
+        <link rel="stylesheet" href="chota.css" />
+        <style>
+            body {
+                background-color: #bab9ac;
+            }
+            .dropd {
+                position: relative;
+                display: inline-block;
+            }
+            .context sub{
+                color: #664400;
+            }
+            .context sup{
+                color: purple;
+            }
+            .highlight {
+                background: yellow;
+            }
+
+            .tbug{
+                background: #ffcccc;
+                border-radius: 10px;
+                padding: 1em;
+            }
+
+            .dropd-content {
+                display: none;
+                position: absolute;
+                background-color: #e9d9a9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                padding: 12px 16px;
+                z-index: 1;
+            }
+
+            .dropd:hover .dropd-content {
+                display: block;
+            }
+            .input {
+                width: 8%;
+            }
+            .entry {
+                background-color: white;
+                border: 2px dashed #deeede;
+                border-radius: 5px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                margin-bottom: 0.5em;
+                padding: 0.5em;
+            }
+            .hent {
+                margin-bottom: 0px;
+                margin-top: 0px;
+                color: #003400;
+            }
+						#logo{
+								position: relative;
+								z-index: -100;
+						}
+            #load {
+                border: 16px solid #e3e3d3; /* Light grey */
+                border-top: 16px solid #1dda50; /* Blue */
+                border-radius: 50%;
+                display: inline-block;
+                width: 120px;
+                height: 120px;
+                animation: spin 2s linear infinite;
+            }
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main class="container">
+            <div id="load"></div>
+            <table>
+                <tr>
+                    <td>
+												<div id="logo"><img src="peakslab.svg" alt="Peak Slab" style="padding: 1em;"></div>
+                        <select style="width: 8em;" name="tablesel" id="tablesel" onchange="javascript:tInit(this)"> </select>
+                    </td>
+                    <td>
+                        <div class="dropd">
+                            <span class="button dark">Columns</span>
+                            <div id="dcol" class="dropd-content"></div>
+                        </div>
+                        <div class="dropd">
+                            <span class="button">Options</span>
+                            <div class="dropd-content">
+                                <input type="checkbox" id="desc" value="b" /><label>Reverse Order</label><br />
+                                <input type="checkbox" id="bcheck" value="b" checked /><label>Beginning</label><br />
+                                <input type="checkbox" id="echeck" value="e" /><label>Ending</label><br />
+                                <label for="limit"> <input type="range" min="5" max="1000" value="50" class="slider" id="limit" /> Results <span id="limitd">50</span></label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="search" id="q" name="search" placeholder="search" onsearch="javascript:tSearch(0)" required autofocus />
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <span class="button success" onclick="javascript:tSearch(1)">ALL</span>
+                                </td>
+                                <td>
+                                    <label for="qcol">Search Column:</label>
+                                    <select name="qcol" id="qcol"> </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <div id="tout"></div>
+            <script>
+								const logo = document.getElementById("logo");
+								logo.innerHTML = document.title.match(/[0-9.]+/) + logo.innerHTML;
+                const q = document.getElementById("q");
+                q.addEventListener("keypress", function (event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                        tSearch(0);
+                    }
+                });
+                const tsel = document.getElementById("tablesel");
+                const qcol = document.getElementById("qcol");
+                const desc = document.getElementById("desc");
+                const limitd = document.getElementById("limitd");
+                const limit = document.getElementById("limit");
+                limit.oninput = function () {
+                    limitd.innerHTML = this.value;
+                };
+                const bcheck = document.getElementById("bcheck");
+                const echeck = document.getElementById("echeck");
+                const dcol = document.getElementById("dcol");
+                const w = new Worker(
+                    "dict.js?sqlite3.dir=jswasm&" // + urlParams
+                    /* Note the URL argument on that name. See
+                              the notes in demo-123.js (search for
+                              "importScripts") for why we need
+                              that. */
+                );
+                (function () {
+                    var color = false;
+                    const logHtml = function (cssClass, ...args) {
+                        if (cssClass == "entry") {
+                            const ln = document.createElement("div");
+                            ln.classList.add("entry");
+                            ln.innerHTML = args;
+                            //        ln.append(document.createTextNode(args.join(' ')));
+                            document.getElementById("tout").append(ln);
+                            color = !color;
+                        } else if (cssClass == "refresh") {
+                            tInit();
+                        } else if (cssClass == "init") {
+                            qcol.innerHTML += '<option value="' + args + '">' + args + "</option>";
+                            dcol.innerHTML += '<input type="checkbox" value="' + args + '" checked><label>' + args + "</label><br>";
+                        } else if (cssClass == "dictlist") {
+                            tsel.innerHTML += args;
+                        } else {
+                            const ln = document.createElement("div");
+                            if (cssClass) ln.classList.add(cssClass);
+                            ln.append(document.createTextNode(args.join(" ")));
+                            document.getElementById("tbug").append(ln);
+                        }
+                    };
+
+                    //const urlParams = new URL(globalThis.location.href).searchParams;
+                    //document.getElementById('input').value = urlParams.get("search");
+
+                    w.onmessage = function ({ data }) {
+                        console.log("MAIN: Message received from worker");
+                        switch (data.type) {
+                            case "log":
+                                logHtml(data.payload.cssClass, ...data.payload.args);
+                                break;
+                            default:
+                                logHtml("bg-error", "Unhandled message:", data.type);
+                        }
+                    };
+                })();
+                var tInit = function () {
+                    console.log("MAIN: init message sent to worker");
+                    dcol.innerHTML = qcol.innerHTML = "";
+                    let lo = document.getElementById("load");
+                    if (lo) lo.remove();
+                    w.postMessage(".init: " + tsel.value);
+                };
+
+                var tSearch = function (all) {
+                    console.log("MAIN: Message posted to worker");
+                    document.getElementById("tout").innerHTML = "";
+                    const dlist = [];
+                    dcol.childNodes.forEach(function (node) {
+                        if (node.tagName == "INPUT" && node.checked) {
+                            dlist.push(node.value);
+                        }
+                    });
+                    const dres = dlist.filter((x) => typeof x === "string" && x.length > 0).join(", ");
+                    w.postMessage(
+                        "SELECT " +
+                            dres +
+                            " FROM " +
+                            tsel.value +
+                            " WHERE " +
+                            qcol.value +
+                            " LIKE " +
+                            (!bcheck.checked ? "'%" : "'") +
+                            q.value +
+                            (!echeck.checked ? "%'" : "'") +
+                            " order by " +
+                            qcol.value +
+                            (desc.checked ? " desc" : " asc") +
+                            " limit " +
+                            limit.value +
+                            ";"
+                    );
+                };
+
+                const registerServiceWorker = async () => {
+                    if ("serviceWorker" in navigator) {
+                        try {
+                            const registration = await navigator.serviceWorker.register("dictsw.js", {});
+                            if (registration.installing) {
+                                console.log("Service worker installing");
+                            } else if (registration.waiting) {
+                                console.log("Service worker installed");
+                            } else if (registration.active) {
+                                console.log("Service worker active");
+                            }
+                        } catch (error) {
+                            console.error(`Registration failed with ${error}`);
+                        }
+                    }
+                };
+                registerServiceWorker();
+
+                var tRemoveServiceWorker = function () {
+                    console.log("Trying to uninstall Service Worker");
+                    if (window.navigator && navigator.serviceWorker) {
+                        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                            for (let registration of registrations) {
+                                registration.unregister();
+                                console.log("Uninstalled Service Worker");
+                            }
+                        });
+                    }
+                };
+            </script>
+            <div id="tbug" class="tbug"></div>
+            <div class="button error" onclick="javascript:tRemoveServiceWorker(this)">Uninstall</div>
+            <div class="button success" onclick="javascript:registerServiceWorker()">Install</div>
+        </main>
+    </body>
+</html>
