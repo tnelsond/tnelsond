@@ -42,10 +42,9 @@
     dstyle["kh"] = '<h3 class="hent">###</h3>';
     dstyle["w"] = '<h3 class="hent">###</h3>';
     dstyle["headley97"] = '<p style="color: #240074"><span class="tag is-small">Headley 97</span><br>###</p>';
-    dstyle["headley77"] = '<p style="color: #007400"><span class="tag is-small">Headley 77</span><br>###</p>';
-    dstyle["khdef"] = '<p style="color: #003333"><span class="tag is-small">Chuon Nath 2023</span><br>###</p>';
+    dstyle["khdef"] = '<p style="color: #003333"><span class="tag is-small">Chuon Nath 2022</span><br>###</p>';
     dstyle["def"] = '<p><span class="tag is-small">Sonveasna</span><br>###</p>';
-    dstyle["khph"] = dstyle["khpos"] = '<p style="color: #740000">###</p>';
+    dstyle["khph"] = '<p style="color: #000000">###</p>';
     dstyle["csea"] = '<span style="color: red">###</span><sup>csea</sup> ';
     dstyle["ckhsv"] = '<span style="color: purple">###</span><sup>ckhsv</sup> ';
     dstyle["ckhov"] = '<span style="color: green">###</span><sup>ckhov</sup> ';
@@ -71,7 +70,7 @@
                     logHtml("init", row[1]);
                 }.bind({ counter: 0 }),
             });
-							/*dbass.exec({
+					/*		dbass.exec({
 								sql: "SELECT data from audio where title='កក.ogg';",
 								rowMode: 'object',
 								callback: function(row){
@@ -92,16 +91,18 @@
         } else {
             console.log("Worker:" + e.data);
             const lopokup = e.data.match(/SELECT (.*) FROM/)[1].split(", ");
-            const que = ("^" + e.data.match(/LIKE '(.*)' /)[1] + "$").replace("^%", "").replace("%$", "").replace("_", ".");
+            const que = ("^" + e.data.match(/LIKE '([^\x27]*)' /)[1] + "$").replace("^%", "").replace("%$", "").replace("_", ".");
             console.log("query!: " + que);
             const quer = new RegExp(que, "mgi");
             console.log(quer);
             console.log(lopokup);
+						let counter = 0;
             db.exec({
                 sql: e.data,
                 rowMode: "array", // 'array' (default), 'object', or 'stmt'
                 callback: function (row) {
                     ++this.counter;
+										++counter;
                     let res = "";
                     for (let i = 0; i < row.length; ++i) {
                         if (row[i]) {
@@ -111,7 +112,10 @@
 															if(sty.match("#####")){
 																res += sty.replaceAll("#####", temp);
 															} else{
-                                res += sty.replaceAll("###", temp.replace(quer, '<span class="highlight">$&</span>'));
+																if(que != "" && que != "."){
+																	res += sty.replaceAll("###", temp.replace(quer, '<mark>$&</mark>'));
+																}else
+																	res += sty.replaceAll("###", temp);
 															}
 														}else{
                                 res += temp + "<br />";
@@ -123,6 +127,7 @@
 									//addEntry(row.join('</div><div class="col">'));
                 }.bind({ counter: 0 }),
             });
+            logHtml("results", "" + counter);
         }
 		}
     };
@@ -154,7 +159,16 @@
 										sql: "SELECT name FROM sqlite_master WHERE type='table' order by name asc;",
 										rowMode: "array", // 'array' (default), 'object', or 'stmt'
 										callback: function (row) {
-												logHtml("dictlist", '<option value="' + row + '">' + row + "</option>");
+											 logHtml("dictlist", row);
+											 db.exec({
+												sql: "PRAGMA table_info(" + row + ");",
+												rowMode: "array", // 'array' (default), 'object', or 'stmt'
+												callback: function (cow) {
+														++this.counter;
+														logHtml("init2", cow[1]);
+												}.bind({ counter: 0 }),
+										});
+
 										}.bind({ counter: 0 }),
 								});
 
@@ -220,7 +234,7 @@
         })
         .then(function (sqlite3) {
             //console.log('sqlite3 =',sqlite3);
-            log("Done initializing. Running demo...");
+            log("Done initializing...");
             try {
                 demo1(sqlite3, "tdict8.db.html", false, true);
             } catch (e) {

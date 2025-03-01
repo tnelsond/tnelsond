@@ -14,11 +14,6 @@
 */
 "use strict";
 (function () {
-    /**
-     Set up our output channel differently depending
-     on whether we are running in a worker thread or
-     the main (UI) thread.
-  */
     let logHtml;
     if (globalThis.window === globalThis /* UI thread */) {
         console.log("Running demo from main UI thread.");
@@ -45,6 +40,7 @@
     dstyle["class"] = '<span class="tag" style="color: #443300">Class: ###</span>';
     dstyle["corrupt"] = '<span class="tag" style="color: #770000">Corrupt: ###</span>';
     dstyle["dialect"] = '<span class="tag" style="color: #002266">Dialect: ###</span>';
+   dstyle["media"] = '<div class="media" id="#####"><button onclick="javascript:tAudio(this);">▶</button></div>';
 
     onmessage = (e) => {
         console.log("Worker: Message received from main script#: " + e);
@@ -61,53 +57,52 @@
                     logHtml("init", row[1]);
                 }.bind({ counter: 0 }),
             });
-				} else {
+					/*		dbass.exec({
+								sql: "SELECT data from audio where title='កក.ogg';",
+								rowMode: 'object',
+								callback: function(row){
+									log("row ",++this.counter,"=",JSON.stringify(row.data) + "\n" + typeof(row));
+									sendAudio(row.data);
+								}.bind({counter: 0})
+							});*/
+				} else if(e.data.startsWith(".addmedia: ")){
+						let [id, media] = e.data.substring(11).split("@");
+						console.log("AUDIO: " + id + " media: " + media);
+						dbass.exec({
+							sql: "SELECT data from audio where title='" + media + "';",
+							rowMode: 'object',
+							callback: function(row){
+								sendAudio(id, row.data);
+							}.bind({counter: 0})
+						});
+        } else {
             console.log("Worker:" + e.data);
             const lopokup = e.data.match(/SELECT (.*) FROM/)[1].split(", ");
-            const que = ("^" + e.data.match(/LIKE '(.*)' /)[1] + "$").replace("^%", "").replace("%$", "").replace("_", ".");
+            const que = ("^" + e.data.match(/LIKE '([^\x27]*)' /)[1] + "$").replace("^%", "").replace("%$", "").replace("_", ".");
             console.log("query!: " + que);
             const quer = new RegExp(que, "mgi");
             console.log(quer);
             console.log(lopokup);
+						let counter = 0;
             db.exec({
                 sql: e.data,
                 rowMode: "array", // 'array' (default), 'object', or 'stmt'
                 callback: function (row) {
                     ++this.counter;
+										++counter;
                     let res = "";
                     for (let i = 0; i < row.length; ++i) {
                         if (row[i]) {
 														let temp = row[i].toString();
                             let sty = dstyle[lopokup[i]];
 														if(sty){
-															if(lopokup[i] == 'Class'){
-																temp = temp.replace(/\b1\b/, "1 (People and animal nouns)");
-																temp = temp.replace(/\b2\b/, "2 (Plural of people and animal nouns; also used to denote respect)");
-																temp = temp.replace(/\b3\b/, "3 (Non-animal or person nouns beginning with MU)");
-																temp = temp.replace(/\b4\b/, "4 (Plural non-animal or person nouns beginning with MU)");
-																temp = temp.replace(/\b5\b/, "5 (Nouns begining with I or are corrupted)");
-																temp = temp.replace(/\b6\b/, "6 (Plural nouns begining with I or are corrupted)");
-																temp = temp.replace(/\b7\b/, "7 (Inanimate objects and nouns beginning with CI)");
-																temp = temp.replace(/\b8\b/, "8 (Plural inanimate objects and nouns beginning with CI)");
-																temp = temp.replace(/\b9\b/, "9 (Nouns beginning with NG)");
-																temp = temp.replace(/\b10\b/, "10 (Plural of nouns beginning with NG)");
-																temp = temp.replace(/\b11\b/, "11 (Abstract concept nouns and nouns beginning with LU)");
-																temp = temp.replace(/\b12\b/, "12 (Diminutive nouns and nouns beginning with KA)");
-																temp = temp.replace(/\b13\b/, "13 (Plural diminutive nouns and nouns beginning with KA)");
-																temp = temp.replace(/\b14\b/, "14 (Collective nouns and nouns beginning with BU)");
-																temp = temp.replace(/\b15\b/, "15 (Gerunds (Verbal nouns) and nouns beginning with KU)");
-																temp = temp.replace(/\b16\b/, "16 (Locative Class for 'Ku')");
-																temp = temp.replace(/\b17\b/, "17 (Locative Class for 'Mu')");
-																temp = temp.replace(/\b18\b/, "18 (Locative Class for 'A')");
-															}else if(lopokup[i] == 'Dialect'){
-																temp = temp.replace(/\bI\b/i, "I(Ila)");
-																temp = temp.replace(/\bL\b/i, "L(Lenge)");
-																temp = temp.replace(/\bM\b/i, "M(Mukuni)");
-															}
 															if(sty.match("#####")){
 																res += sty.replaceAll("#####", temp);
 															} else{
-                                res += sty.replaceAll("###", temp.replace(quer, '<span class="highlight">$&</span>'));
+																if(que != "" && que != "."){
+																	res += sty.replaceAll("###", temp.replace(quer, '<mark>$&</mark>'));
+																}else
+																	res += sty.replaceAll("###", temp);
 															}
 														}else{
                                 res += temp + "<br />";
@@ -119,12 +114,14 @@
 									//addEntry(row.join('</div><div class="col">'));
                 }.bind({ counter: 0 }),
             });
+            logHtml("results", "" + counter);
         }
 		}
     };
 
     const log = (...args) => logHtml("", ...args);
     const addEntry = (...args) => logHtml("entry", ...args);
+    const sendAudio = (...args) => logHtml("audio", ...args);
     const warn = (...args) => logHtml("bg-warning", ...args);
     const error = (...args) => logHtml("bd-error", ...args);
     var db;
@@ -148,7 +145,16 @@
 										sql: "SELECT name FROM sqlite_master WHERE type='table' order by name asc;",
 										rowMode: "array", // 'array' (default), 'object', or 'stmt'
 										callback: function (row) {
-												logHtml("dictlist", '<option value="' + row + '">' + row + "</option>");
+											 logHtml("dictlist", row);
+											 db.exec({
+												sql: "PRAGMA table_info(" + row + ");",
+												rowMode: "array", // 'array' (default), 'object', or 'stmt'
+												callback: function (cow) {
+														++this.counter;
+														logHtml("init2", cow[1]);
+												}.bind({ counter: 0 }),
+										});
+
 										}.bind({ counter: 0 }),
 								});
 
@@ -156,7 +162,6 @@
                 //        xplorer.setDb(db);
             });
     };
-
     log("Loading and initializing sqlite3 module...");
     if (globalThis.window !== globalThis) {
         /*worker thread*/ /*
@@ -192,7 +197,7 @@
         })
         .then(function (sqlite3) {
             //console.log('sqlite3 =',sqlite3);
-            log("Done initializing. Running demo...");
+            log("Done initializing...");
             try {
                 demo1(sqlite3, "chitonga.db.html", false, true);
             } catch (e) {

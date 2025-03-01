@@ -1,4 +1,4 @@
-let cache_name = 'peakslabchitonga 0.0.2';
+let cache_name = 'peakslabchitonga 0.0.3';
 let urls_to_cache = [
  './',
  'chitonga.db.html',
