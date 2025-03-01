@@ -35,7 +35,7 @@
     }
     const dstyle = {};
     dstyle["tonga"] = '<h3 class="hent">###</h3>';
-    dstyle["english"] = '<h4 class="hent" style="color:#110044">###</h3>';
+    dstyle["english"] = '<h4 style="color:#000044">###</h3>';
     dstyle["position"] = '<span class="tag" style="color: #770066">###</span>';
     dstyle["class"] = '<span class="tag" style="color: #443300">Class: ###</span>';
     dstyle["corrupt"] = '<span class="tag" style="color: #770000">Corrupt: ###</span>';
