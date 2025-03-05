@@ -1,8 +1,8 @@
 {
   "name": "PeakSlab Chitonga",
   "short_name": "PeakTonga",
-  "theme_color": "#66bb33",
-  "background_color": "#007700",
+  "theme_color": "#6633bb",
+  "background_color": "#002780",
   "display": "fullscreen",
   "scope": "/peakslabchitonga",
   "start_url": "/peakslabchitonga",

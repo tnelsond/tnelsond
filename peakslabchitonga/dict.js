@@ -14,6 +14,11 @@
 */
 "use strict";
 (function () {
+    /**
+     Set up our output channel differently depending
+     on whether we are running in a worker thread or
+     the main (UI) thread.
+  */
     let logHtml;
     if (globalThis.window === globalThis /* UI thread */) {
         console.log("Running demo from main UI thread.");
@@ -34,13 +39,13 @@
         };
     }
     const dstyle = {};
-    dstyle["tonga"] = '<h3 class="hent">###</h3>';
+    dstyle["tonga"] = '<h3 class="hentu">###</h3>';
     dstyle["english"] = '<h4 style="color:#000044">###</h3>';
     dstyle["position"] = '<span class="tag" style="color: #770066">###</span>';
     dstyle["class"] = '<span class="tag" style="color: #443300">Class: ###</span>';
     dstyle["corrupt"] = '<span class="tag" style="color: #770000">Corrupt: ###</span>';
     dstyle["dialect"] = '<span class="tag" style="color: #002266">Dialect: ###</span>';
-   dstyle["media"] = '<div class="media" id="#####"><button onclick="javascript:tAudio(this);">▶</button></div>';
+    dstyle["media"] = '<div class="media" id="#####"><button onclick="javascript:tAudio(this);">▶</button></div>';
 
     onmessage = (e) => {
         console.log("Worker: Message received from main script#: " + e);
@@ -57,6 +62,7 @@
                     logHtml("init", row[1]);
                 }.bind({ counter: 0 }),
             });
+						logHtml("init", "*ALL");
 					/*		dbass.exec({
 								sql: "SELECT data from audio where title='កក.ogg';",
 								rowMode: 'object',
@@ -65,7 +71,7 @@
 									sendAudio(row.data);
 								}.bind({counter: 0})
 							});*/
-				} else if(e.data.startsWith(".addmedia: ")){
+				/*} else if(e.data.startsWith(".addmedia: ")){
 						let [id, media] = e.data.substring(11).split("@");
 						console.log("AUDIO: " + id + " media: " + media);
 						dbass.exec({
@@ -74,18 +80,18 @@
 							callback: function(row){
 								sendAudio(id, row.data);
 							}.bind({counter: 0})
-						});
+						});*/
         } else {
             console.log("Worker:" + e.data);
             const lopokup = e.data.match(/SELECT (.*) FROM/)[1].split(", ");
-            const que = ("^" + e.data.match(/LIKE '([^\x27]*)' /)[1] + "$").replace("^%", "").replace("%$", "").replace("_", ".");
+            const que = ("^" + e.data.match(/LIKE '([^\x27]*)' /)[1] + "$").replace(/\^%+/, "").replace(/%+\$/, "").replaceAll("_", ".").replaceAll(/‘/g, "'");
             console.log("query!: " + que);
             const quer = new RegExp(que, "mgi");
             console.log(quer);
             console.log(lopokup);
 						let counter = 0;
             db.exec({
-                sql: e.data,
+                sql: e.data.replaceAll(/‘‘*/g, "''"),
                 rowMode: "array", // 'array' (default), 'object', or 'stmt'
                 callback: function (row) {
                     ++this.counter;
@@ -125,6 +131,7 @@
     const warn = (...args) => logHtml("bg-warning", ...args);
     const error = (...args) => logHtml("bd-error", ...args);
     var db;
+    //var dbass;
     const demo1 = function (sqlite3, dbUrl, immutable = false) {
         fetch(dbUrl)
             .then((res) => res.arrayBuffer())
@@ -162,6 +169,31 @@
                 //        xplorer.setDb(db);
             });
     };
+		/*
+    const initassets = function (sqlite3, dbUrl, immutable = false) {
+        fetch(dbUrl)
+            .then((res) => res.arrayBuffer())
+            .then((arrayBuffer) => {
+                if (!immutable) {
+                    arrayBuffer.resizeable = true;
+                }
+                const p = sqlite3.wasm.allocFromTypedArray(arrayBuffer);
+                dbass = new sqlite3.oo1.DB();
+                let deserialize_flags = sqlite3.capi.SQLITE_DESERIALIZE_FREEONCLOSE;
+                if (!immutable) {
+                    deserialize_flags |= sqlite3.capi.SQLITE_DESERIALIZE_RESIZEABLE;
+                }
+                const rc = sqlite3.capi.sqlite3_deserialize(dbass.pointer, "main", p, arrayBuffer.byteLength, arrayBuffer.byteLength, deserialize_flags);
+                dbass.checkRc(rc);
+
+									logHtml("refresh", "");
+                //        xplorer.setDb(db);
+            });
+    };
+		*/
+
+
+
     log("Loading and initializing sqlite3 module...");
     if (globalThis.window !== globalThis) {
         /*worker thread*/ /*
@@ -203,5 +235,12 @@
             } catch (e) {
                 error("Exception:", e.message);
             }
+						/*
+            try {
+                initassets(sqlite3, "assets.db.html");
+            } catch (e) {
+                error("Exception:", e.message);
+            }
+						*/
         });
 })();

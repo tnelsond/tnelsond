@@ -70,6 +70,7 @@
                     logHtml("init", row[1]);
                 }.bind({ counter: 0 }),
             });
+						logHtml("init", "*ALL");
 					/*		dbass.exec({
 								sql: "SELECT data from audio where title='កក.ogg';",
 								rowMode: 'object',
@@ -91,14 +92,14 @@
         } else {
             console.log("Worker:" + e.data);
             const lopokup = e.data.match(/SELECT (.*) FROM/)[1].split(", ");
-            const que = ("^" + e.data.match(/LIKE '([^\x27]*)' /)[1] + "$").replace("^%", "").replace("%$", "").replace("_", ".");
+            const que = ("^" + e.data.match(/LIKE '([^\x27]*)' /)[1] + "$").replace(/\^%+/, "").replace(/%+\$/, "").replaceAll("_", ".").replaceAll(/‘/g, "'");
             console.log("query!: " + que);
             const quer = new RegExp(que, "mgi");
             console.log(quer);
             console.log(lopokup);
 						let counter = 0;
             db.exec({
-                sql: e.data,
+                sql: e.data.replaceAll(/‘‘*/g, "''"),
                 rowMode: "array", // 'array' (default), 'object', or 'stmt'
                 callback: function (row) {
                     ++this.counter;

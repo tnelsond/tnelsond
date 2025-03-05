@@ -58,6 +58,11 @@
                 margin-bottom: 0px;
                 margin-top: 0px;
                 color: #004400;
+            }
+            .hentu {
+                margin-bottom: 0px;
+                margin-top: 0px;
+                color: #004400;
 								border-bottom: 2px dashed #aaaa99;
 								display: inline;
             }
@@ -84,7 +89,11 @@
                     transform: rotate(360deg);
                 }
             }
-						#q,#searchbutton,#qcol{
+						#tout{
+							clear:left;
+						}
+						#q,#searchbutton,#qcol,#qsort{
+							background: #f1f1f1;
 							margin: 0;
 							padding: 0;
 							border: 0;
@@ -98,20 +107,37 @@
 						#q{
 							background: #f1f1f1;
 							border-right: none;
-							border-radius: 15px 0px 0px 15px;
-							float: left;
-							width: calc(100% - 10em);
-						}
-						#qcol{
-							border-left: 0px;
-							border-right: 0px;
+							border-left: none;
 							border-radius: 0px;
 							float: left;
-							width: 5em;
+							width: calc(100% - 9.5em);
+						}
+						#qcol{
+							border-right: 1px solid grey;
+							border-radius: 15px 0px 0px 15px;
+							float: left;
+							width: 4em;
+							background: #cccccc;
+							padding: 12px 1px 12px 5px;
+							font-size: 15px;
+							text-align: center;
+						}
+						#qsort{
+							float: left;
+							width: 1.5em;
+							padding-left: 0px;
+							border-right: none;
+							border-left: none;
+							border-radius: 0px;
+						}
+						#qsort:hover{
+							color: red;
 						}
 						.searchbox{
 							margin-top: 1em;
 							clear: left;
+							float: left;
+							width: 100%;
 						}
 						#searchbutton{
 							padding: 10px;
@@ -121,7 +147,7 @@
 							border-radius: 0px 15px 15px 0px;
 							cursor: pointer;
 							float: left;
-							width: 5em;
+							width: 4em;
 							background: #229922;
 						}
 						#searchbutton:hover{
@@ -141,19 +167,17 @@
                         <div class="dropd">
                             <span class="button" style="padding-left: .9em; padding-right: .9em">Options</span>
                             <div class="dropd-content">
-                                <input type="checkbox" id="desc" value="b" /><label>Reverse Order</label><br />
-                                <input type="checkbox" id="bcheck" value="b" checked /><label>Beginning</label><br />
-                                <input type="checkbox" id="echeck" value="e" /><label>Ending</label><br />
+                                <input type="checkbox" id="bcheck" value="b" checked /><label>Beginning</label><br>
+                                <input type="checkbox" id="echeck" value="e" /><label>Ending</label><br>
                                 <label for="limit"> <input type="range" min="5" max="1000" value="50" class="slider" id="limit" /> Results <span id="limitd">50</span></label>
                             </div>
                         </div>
 												<div class="searchbox">
-                        <input type="search" id="q" name="search" placeholder="search" onsearch="javascript:tSearch(0)" autofocus>
 												<select name="qcol" id="qcol"> </select>
+                        <input type="search" id="q" name="search" placeholder="Search..." onsearch="javascript:tSearch(0)" autofocus>
+												<div id="qsort" onclick="tToggleDesc(this)">A↓</div>
                         <button id="searchbutton" onclick="javascript:tSearch(0)">🔍</button>
 												</div>
-						<br>
-						<br>
             <div id="tresults"></div>
             <div id="tout"></div>
             <script>
@@ -166,9 +190,21 @@
                         tSearch(0);
                     }
                 });
+
+                var desc = true;
+								var tToggleDesc = function (div) {
+										desc = !desc;
+										if(desc){
+											div.innerHTML = "A↓";
+										}
+										else{
+											div.innerHTML = "A↑";
+										}
+										tSearch(0);
+								};
+
                 const tsel = document.getElementById("tablesel");
                 const qcol = document.getElementById("qcol");
-                const desc = document.getElementById("desc");
                 const limitd = document.getElementById("limitd");
                 const limit = document.getElementById("limit");
 								const tout = document.getElementById("tout");
@@ -208,8 +244,14 @@
                         } else if (cssClass == "refresh") {
                             tInit();
                         } else if (cssClass == "init") {
-                            qcol.innerHTML += '<option value="' + args + '">' + args + "</option>";
-                            dcol.innerHTML += '<input type="checkbox" value="' + args + '" checked><label>' + args + "</label><br>";
+														if(args == "*ALL"){
+															qcol.innerHTML += '<option style="background: yellow" value="' + args + '">' + args + "</option>";
+														}else{
+															qcol.innerHTML += '<option value="' + args + '">' + args + "</option>";
+															dcol.innerHTML += '<input type="checkbox" value="' + args + '" checked><label>' + args + "</label><br>";
+														}
+														let lo = document.getElementById("load");
+														if (lo) lo.remove();
                         } else if (cssClass == "init2") {
 														tlist[tlist.length-1].col.push(args);
                         } else if (cssClass == "dictlist") {
@@ -256,18 +298,25 @@
                 var tInit = function () {
                     console.log("MAIN: init message sent to worker");
                     dcol.innerHTML = qcol.innerHTML = "";
-                    let lo = document.getElementById("load");
-                    if (lo) lo.remove();
+										if(tlist.length > 0){
+											const foundIdx = tlist.findIndex(el => el.name == tsel.value);
+											const temp = tlist[foundIdx];
+											tlist.splice(foundIdx, 1);
+											tlist.unshift(temp);
+											tsel.innerHTML = "";
+											tlist.forEach(tl => tsel.innerHTML += '<option value="' + tl.name + '">' + tl.name + "</option>");
+										}
                     w.postMessage(".init: " + tsel.value);
                 };
 
                 var tSearch = function (all) {
                     console.log("MAIN: Message posted to worker");
+										const q2 = q.value.replaceAll(/[']+/g, "‘")
                     tout.innerHTML = "";
 										tresults.innerHTML = "Results: ";
 										trestotal = 0;
 										fullsearch = all;
-										if(all == 0){
+										if(all == 0 && qcol.value != "*ALL"){
 											const dlist = [];
 											dcol.childNodes.forEach(function (node) {
 													if (node.tagName == "INPUT" && node.checked) {
@@ -284,11 +333,11 @@
 															qcol.value +
 															" LIKE " +
 															(!bcheck.checked ? "'%" : "'") +
-															q.value +
+															q2 +
 															(!echeck.checked ? "%'" : "'") +
 															" order by " +
 															qcol.value +
-															(desc.checked ? " desc" : " asc") +
+															(desc ? " desc" : " asc") +
 															" limit " +
 															limit.value +
 															";"
@@ -298,8 +347,8 @@
 										tlist.forEach(function tcallall(ctab){
 										/*	for (let i = 0; i < ctab.col.length; i++) {
 												let ccol = ctab.col[i]; */
-											let ccol = ctab.col.join(" LIKE '%" + q.value + "%' OR ") + " LIKE '%" + q.value + "%'";
-											w.postMessage("SELECT " + ctab.col.join(", ") + " FROM " + ctab.name + " WHERE " + ccol + " order by " + ctab.col[0] + (desc.checked ? " desc" : " asc") + " limit " + limit.value + ";");
+											let ccol = ctab.col.join(" LIKE '%" + q2 + "%' OR ") + " LIKE '%" + q2 + "%'";
+											w.postMessage("SELECT " + ctab.col.join(", ") + " FROM " + ctab.name + " WHERE " + ccol + " order by " + ((ctab.name == tsel.value && qcol.value != "*ALL") ? qcol.value : ctab.col[0]) + (desc ? " desc" : " asc") + " limit " + limit.value + ";");
 										});
 									}
                 };
