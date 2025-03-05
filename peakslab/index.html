@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png" />
         <link rel="manifest" href="manifest.json" />
-        <title>PS-Khmer Dict 0.2.9</title>
+        <title>PS-Khmer Dict 0.3.0</title>
         <link rel="stylesheet" href="chota.css" />
         <style>
             body {
@@ -118,7 +118,7 @@
 							float: left;
 							width: 4em;
 							background: #cccccc;
-							padding: 12px 1px 12px 5px;
+							padding: 11px 1px 12px 5px;
 							font-size: 15px;
 							text-align: center;
 						}
@@ -152,6 +152,14 @@
 						}
 						#searchbutton:hover{
 							background: #44aa44;
+						}
+						@-moz-document url-prefix() {
+							#qcol{
+								padding: 12px 1px 12px 5px;
+							}
+							#searchbutton{
+								padding-bottom: 11px;
+							}
 						}
         </style>
     </head>
@@ -245,7 +253,7 @@
                             tInit();
                         } else if (cssClass == "init") {
 														if(args == "*ALL"){
-															qcol.innerHTML += '<option style="background: yellow" value="' + args + '">' + args + "</option>";
+															qcol.innerHTML += '<option style="background: yellow; font-size: 125%" value="' + args + '">' + args + "</option>";
 														}else{
 															qcol.innerHTML += '<option value="' + args + '">' + args + "</option>";
 															dcol.innerHTML += '<input type="checkbox" value="' + args + '" checked><label>' + args + "</label><br>";
