@@ -3,7 +3,6 @@ let urls_to_cache = [
  './',
  'tdict8.db.html',
  'assets.db.html',
- 'peakslab.svg',
  'manifest.json',
  'chota.css',
  'favicon16x16.png',

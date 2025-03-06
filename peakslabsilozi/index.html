@@ -108,11 +108,19 @@
 							background: #f1f1f1;
 							border-right: none;
 							border-left: none;
-							border-radius: 0px;
+							border-radius: 15px 15px 15px 15px;
+							padding-left: 4em;
+							padding-right: 5.6em;
 							float: left;
-							width: calc(100% - 9.5em);
+              z-index: 1;
+							width: 100%;
+						}
+						#q:hover{
+							box-shadow: 0 0px 4px var(--color-primary);
 						}
 						#qcol{
+							position: absolute;
+              z-index: 2;
 							border-right: 1px solid grey;
 							border-radius: 15px 0px 0px 15px;
 							float: left;
@@ -123,8 +131,10 @@
 							text-align: center;
 						}
 						#qsort{
-							float: left;
+							position: absolute;
+              z-index: 2;
 							width: 1.5em;
+							margin-left: calc(100% - 5.5em);
 							padding-left: 0px;
 							border-right: none;
 							border-left: none;
@@ -134,34 +144,29 @@
 							color: red;
 						}
 						.searchbox{
+							position: relative;
 							margin-top: .5em;
 							clear: left;
 							float: left;
 							width: 100%;
 						}
 						#searchbutton{
+							position: absolute;
+              z-index: 2;
 							padding-top: 12px;
 							padding-bottom: 2px;
 							padding-left: 10px;
 							border: 1px solid grey;
 							font-size: 17px;
 							border-left: none;
+							margin-left: -4em;
 							border-radius: 0px 15px 15px 0px;
 							cursor: pointer;
-							float: left;
 							width: 4em;
-							background: #229922;
+							background: #559900;
 						}
 						#searchbutton:hover{
-							background: #44aa44;
-						}
-						@-moz-document url-prefix() {
-							#qcol{
-								padding: 12px 1px 12px 5px;
-							}
-							#searchbutton{
-								padding-bottom: 11px;
-							}
+							background: #88aa00;
 						}
         </style>
     </head>

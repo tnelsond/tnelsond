@@ -2,7 +2,6 @@ let cache_name = 'peakslabchitonga 0.0.4';
 let urls_to_cache = [
  './',
  'chitonga.db.html',
- 'peakslab.svg',
  'manifest.json',
  'chota.css',
  'favicon16x16.png',

@@ -2,7 +2,6 @@ let cache_name = 'peakslabsilozi 0.0.2';
 let urls_to_cache = [
  './',
  'silozi.db.html',
- 'peakslab.svg',
  'manifest.json',
  'chota.css',
  'favicon16x16.png',
