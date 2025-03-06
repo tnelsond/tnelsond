@@ -134,13 +134,15 @@
 							color: red;
 						}
 						.searchbox{
-							margin-top: 1em;
+							margin-top: .5em;
 							clear: left;
 							float: left;
 							width: 100%;
 						}
 						#searchbutton{
-							padding: 10px;
+							padding-top: 12px;
+							padding-bottom: 2px;
+							padding-left: 10px;
 							border: 1px solid grey;
 							font-size: 17px;
 							border-left: none;
@@ -166,7 +168,9 @@
     <body>
         <main class="container">
             <div id="load"></div>
-												<div id="logo"><img src="peakslab.svg" alt="Peak Slab" style="padding: .5em; float: left" width="100px"></div>
+												<div id="logo">
+													<svg width="86" height="86" version="1.1" viewBox="0 0 647 647" xmlns="http://www.w3.org/2000/svg" style="padding-right: .2em; float: left" width="90px"><g fill-rule="evenodd"><rect x="75" y="101" width="540" height="541" fill="#9c3" fill-rule="evenodd"/><g><path d="m45 498-2 129 536-2 1-140-26-32z" fill="#404040"/><path d="m35 194-7 208 180-151 217 157 131-46 16 24 0.4-189z" fill="#404040"/><path d="m209 299-181 174-2 129 536-2 1-140-26-32-131 40z" fill="#808080"/><path d="m306 10c-249-0.4-271 157-271 157l-7 208 180-151 217 157 131-46 16 24 0.4-189s-17-158-266-158z" fill="#808080"/></g><path d="m446 473 23 15 0.9 79-25 14 74 3 31-32-22-30 19-21-19-39zm44 12 23 1 7 19-14 15-19-2zm1 48 25 2 8 21-15 18-21-2z" fill="#404040"/><g transform="matrix(.7 0 0 .7 5 110)" fill="#404040"><path d="m106 225 33-30-24-159-38-12 110-23 67 39-22 75-58 26 32-49-0.5-39-55-10 37 176z"/><path d="m269-43 121 2 0.9 43-21-28-42-0.3 0.8 54 31 0.2 17-14-0.2 46-17-14-31-0.1-0.8 48 45 3 19-27 0.1 49-110 0.4 14-141z"/><path d="m554-50-34 23-69 114-42 16 88 16-19-24 15-31 49 5 5 33-26 17 81 9-22-24zm-22 42 10 47-34-5z"/><path d="m538 507-30 28-42 122-39 22 88 3-22-21 9-31 41-5 19 33-22 21 79-3-25-21zm-16 45 16 45-34-0.1z"/><path d="m580 168 37-10 32-112-22-27 82 24-32 14-16 51 71-41-11-19 76 19-105 50 64 102-80-20 17-14-35-58-20 63z"/><path d="m242 497-67-74-77 101 108 79-29 51-65-31-9 46 80 21 55-43 10-63-96-72 26-41z"/><path d="m267 521 100-1-36 25 3 115 55 1 27-34-7 57-149 3 40-33-0.03-115z"/></g></g></svg>
+												</div>
                         <select style="float: left; width: 6em; margin-right: .4em" name="tablesel" id="tablesel" onchange="javascript:tInit(this)"> </select>
                         <div class="dropd">
                             <span class="button dark" style="padding-left: .9em; padding-right: .9em;">Columns</span>
@@ -184,7 +188,9 @@
 												<select name="qcol" id="qcol"> </select>
                         <input type="search" id="q" name="search" placeholder="Search..." onsearch="javascript:tSearch(0)" autofocus>
 												<div id="qsort" onclick="tToggleDesc(this)">A↓</div>
-                        <button id="searchbutton" onclick="javascript:tSearch(0)">🔍</button>
+                        <button id="searchbutton" onclick="javascript:tSearch(0)">
+<svg width="25" height="25" version="1.1" viewBox="0 0 556 556" xmlns="http://www.w3.org/2000/svg"><circle cx="234" cy="233" r="190" fill="none" stroke="#FFF" stroke-width="62"/><rect transform="rotate(-45)" x="-49" y="526" width="101" height="194" ry="0" fill="#FFF" fill-rule="evenodd"/></svg>
+</button>
 												</div>
             <div id="tresults"></div>
             <div id="tout"></div>
