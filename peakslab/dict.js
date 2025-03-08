@@ -79,7 +79,7 @@
 									sendAudio(row.data);
 								}.bind({counter: 0})
 							});*/
-				} else if(e.data.startsWith(".addmedia: ")){
+				} else if(e.data.startsWith(".addmedia: ") && dbass){
 						let [id, media] = e.data.substring(11).split("@");
 						console.log("AUDIO: " + id + " media: " + media);
 						dbass.exec({
@@ -131,6 +131,63 @@
             logHtml("results", "" + counter);
         }
 		}
+		else if(e.data.startsWith("param: ")){
+			log("Loading and initializing sqlite3 module...");
+			/*worker thread*/ /*
+			If sqlite3.js is in a directory other than this script, in order
+			to get sqlite3.js to resolve sqlite3.wasm properly, we have to
+			explicitly tell it where sqlite3.js is being loaded from. We do
+			that by passing the `sqlite3.dir=theDirName` URL argument to
+			_this_ script. That URL argument will be seen by the JS/WASM
+			loader and it will adjust the sqlite3.wasm path accordingly. If
+			sqlite3.js/.wasm are in the same directory as this script then
+			that's not needed.
+
+			URL arguments passed as part of the filename via importScripts()
+			are simply lost, and such scripts see the globalThis.location of
+			_this_ script.
+		*/
+			let sqlite3Js = "sqlite3.js";
+			const urlParams = new URLSearchParams(e.data.substr(7));
+			console.log(e.data.substr(7));
+			if (urlParams.has("sqlite3.dir")) {
+					sqlite3Js = urlParams.get("sqlite3.dir") + "/" + sqlite3Js;
+					log("sqlite3: " + sqlite3Js);
+			}
+			importScripts(sqlite3Js);
+			globalThis
+					.sqlite3InitModule({
+							/* We can redirect any stdout/stderr from the module like so, but
+				 note that doing so makes use of Emscripten-isms, not
+				 well-defined sqlite APIs. */
+							print: log,
+							printErr: error,
+					})
+					.then(function (sqlite3) {
+							//console.log('sqlite3 =',sqlite3);
+							console.log("Done initializing...");
+							log("URL PARAMS: " + urlParams);
+							const dburl = urlParams.get("db");
+							console.log("db: " + dburl);
+							if (!urlParams.has("db")){
+								log("No database!");
+							}
+							else{
+								try {
+										demo1(sqlite3, dburl, false, true);
+								} catch (e) {
+										error("Exception:", e.message);
+								}
+							}
+							if (urlParams.has("dbass")) {
+								try {
+										initassets(sqlite3, urlParams.get("dbass"));
+								} catch (e) {
+										error("Exception:", e.message);
+								}
+							}
+					});
+			}
     };
 
     const log = (...args) => logHtml("", ...args);
@@ -138,8 +195,8 @@
     const sendAudio = (...args) => logHtml("audio", ...args);
     const warn = (...args) => logHtml("bg-warning", ...args);
     const error = (...args) => logHtml("bd-error", ...args);
-    var db;
-    var dbass;
+    var db = null;
+    var dbass = null;
     const demo1 = function (sqlite3, dbUrl, immutable = false) {
         fetch(dbUrl)
             .then((res) => res.arrayBuffer())
@@ -200,51 +257,4 @@
 
 
 
-    log("Loading and initializing sqlite3 module...");
-    if (globalThis.window !== globalThis) {
-        /*worker thread*/ /*
-      If sqlite3.js is in a directory other than this script, in order
-      to get sqlite3.js to resolve sqlite3.wasm properly, we have to
-      explicitly tell it where sqlite3.js is being loaded from. We do
-      that by passing the `sqlite3.dir=theDirName` URL argument to
-      _this_ script. That URL argument will be seen by the JS/WASM
-      loader and it will adjust the sqlite3.wasm path accordingly. If
-      sqlite3.js/.wasm are in the same directory as this script then
-      that's not needed.
-
-      URL arguments passed as part of the filename via importScripts()
-      are simply lost, and such scripts see the globalThis.location of
-      _this_ script.
-    */
-        let sqlite3Js = "sqlite3.js";
-        const urlParams = new URL(globalThis.location.href).searchParams;
-        log("urlParams: " + urlParams);
-        if (urlParams.has("sqlite3.dir")) {
-            sqlite3Js = urlParams.get("sqlite3.dir") + "/" + sqlite3Js;
-            log("sqlite3: " + sqlite3Js);
-        }
-        importScripts(sqlite3Js);
-    }
-    globalThis
-        .sqlite3InitModule({
-            /* We can redirect any stdout/stderr from the module like so, but
-       note that doing so makes use of Emscripten-isms, not
-       well-defined sqlite APIs. */
-            print: log,
-            printErr: error,
-        })
-        .then(function (sqlite3) {
-            //console.log('sqlite3 =',sqlite3);
-            log("Done initializing...");
-            try {
-                demo1(sqlite3, "tdict8.db.html", false, true);
-            } catch (e) {
-                error("Exception:", e.message);
-            }
-            try {
-                initassets(sqlite3, "assets.db.html");
-            } catch (e) {
-                error("Exception:", e.message);
-            }
-        });
 })();

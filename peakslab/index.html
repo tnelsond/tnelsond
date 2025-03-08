@@ -4,9 +4,9 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png" />
-        <link rel="manifest" href="manifest.json" />
-        <title>PS-Khmer Dict 0.3.0</title>
-        <link rel="stylesheet" href="chota.css" />
+        <title>PS&nbsp;</title>
+        <link rel="stylesheet" href="chota.css">
+        <link rel="manifest" id="link" href="manifest.json">
         <style>
             body {
                 background-color: #d9d9cf;
@@ -73,12 +73,16 @@
 								font-size: 150%;
 						}
             #load {
-                border: 16px solid #e3e3d3; /* Light grey */
-                border-top: 16px solid #1dda50; /* Blue */
+								position: absolute;
+								z-index: 6;
+								margin-left: 5em;
+								margin-top: 5em;
+                border: 30px solid #d3f3a3; /* Light grey */
+                border-top: 30px solid #1dda50; /* Blue */
                 border-radius: 50%;
                 display: inline-block;
-                width: 120px;
-                height: 120px;
+                width: 200px;
+                height: 200px;
                 animation: spin 2s linear infinite;
             }
             @keyframes spin {
@@ -199,7 +203,14 @@
 												</div>
             <div id="tresults"></div>
             <div id="tout"></div>
+            <div id="tbug" class="tbug"></div>
             <script>
+								const urlParams = new URL(globalThis.location.href).searchParams;
+								document.title += urlParams.get("db").match(/^[^.]+/);
+
+								const link = document.getElementById("link");
+								link.setAttribute('href', (urlParams.get("db").match(/^[^.]+/) + ".json") || manifest.json);
+
 								const logo = document.getElementById("logo");
 								logo.innerHTML = document.title + logo.innerHTML;
                 const q = document.getElementById("q");
@@ -209,7 +220,7 @@
                         tSearch(0);
                     }
                 });
-
+								q.value = urlParams.get('q');
                 var desc = true;
 								var tToggleDesc = function (div) {
 										desc = !desc;
@@ -237,13 +248,17 @@
                 const bcheck = document.getElementById("bcheck");
                 const echeck = document.getElementById("echeck");
                 const dcol = document.getElementById("dcol");
+                document.getElementById("tbug").innerHTML += urlParams;
                 const w = new Worker(
-                    "dict.js?sqlite3.dir=jswasm&" // + urlParams
+                    "dict.js" // + urlParams
+
                     /* Note the URL argument on that name. See
                               the notes in demo-123.js (search for
                               "importScripts") for why we need
                               that. */
                 );
+								w.postMessage("param: " + urlParams);
+
                 (function () {
                     var color = false;
                     const logHtml = function (cssClass, ...args) {
@@ -256,7 +271,7 @@
                             color = !color;
                         } else if (cssClass == "results") {
 													trestotal += args;
-													tresults.innerHTML += (args == '0' ? '<span class="bd-error">' : '<span class="bd-success">') + args + ", </span>";
+													tresults.innerHTML += (args == '0' ? '<span class="bd-error">' : '<span class="bd-success">') + args + "; </span>";
 													if(fullsearch == 0 && trestotal == 0){
 														tSearch(1);
 													}
@@ -265,12 +280,17 @@
                         } else if (cssClass == "init") {
 														if(args == "*ALL"){
 															qcol.innerHTML += '<option style="background: yellow; font-size: 125%" value="' + args + '">' + args + "</option>";
+															let lo = document.getElementById("load");
+															if (lo){
+																lo.remove();
+																if(q.value != ""){
+																	tSearch(0);
+																}
+															}
 														}else{
 															qcol.innerHTML += '<option value="' + args + '">' + args + "</option>";
 															dcol.innerHTML += '<input type="checkbox" value="' + args + '" checked><label>' + args + "</label><br>";
 														}
-														let lo = document.getElementById("load");
-														if (lo) lo.remove();
                         } else if (cssClass == "init2") {
 														tlist[tlist.length-1].col.push(args);
                         } else if (cssClass == "dictlist") {
@@ -294,9 +314,6 @@
                             document.getElementById("tbug").append(ln);
                         }
                     };
-
-                    //const urlParams = new URL(globalThis.location.href).searchParams;
-                    //document.getElementById('input').value = urlParams.get("search");
 
                     w.onmessage = function ({ data }) {
                         console.log("MAIN: Message received from worker");
@@ -329,10 +346,12 @@
                 };
 
                 var tSearch = function (all) {
+										urlParams.set('q', q.value);
+										window.history.pushState({"html":"","pageTitle":window.title},"", "?" + urlParams);
                     console.log("MAIN: Message posted to worker");
 										const q2 = q.value.replaceAll(/[']+/g, "‘")
                     tout.innerHTML = "";
-										tresults.innerHTML = "Results: ";
+										tresults.innerHTML = (qcol.value != "*ALL" && all) ? "Narrow search failed, doing wide search. Results: " : "Results: ";
 										trestotal = 0;
 										fullsearch = all;
 										if(all == 0 && qcol.value != "*ALL"){
@@ -388,7 +407,7 @@
                         }
                     }
                 };
-                registerServiceWorker();
+								registerServiceWorker();
 
                 var tRemoveServiceWorker = function () {
                     console.log("Trying to uninstall Service Worker");
@@ -402,7 +421,6 @@
                     }
                 };
             </script>
-            <div id="tbug" class="tbug"></div>
             <button class="button error" onclick="javascript:tRemoveServiceWorker(this)">Uninstall</button>
         </main>
     </body>

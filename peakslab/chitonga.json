@@ -1,11 +1,11 @@
 {
-  "name": "PeakSlab",
-  "short_name": "PeakSlab",
+  "name": "PeakSlabTonga",
+  "short_name": "PsTonga",
   "theme_color": "#66bb33",
   "background_color": "#007700",
   "display": "fullscreen",
   "scope": "/peakslab",
-  "start_url": "/peakslab",
+  "start_url": "/peakslab/index.html?db=chitonga.db.html",
 	"icons": [
   {
     "src": "favicon32x32.png",

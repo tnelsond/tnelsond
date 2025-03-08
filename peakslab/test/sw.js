@@ -1,20 +1,7 @@
-let cache_name = 'peakslab 0.3.2';
+let cache_name = 'test 0.0.1';
 let urls_to_cache = [
  'index.html',
- './',
-// 'tdict8.db.html',
-// 'assets.db.html',
- 'chitonga.db.html',
-// 'manifest.json',
- 'khmer.db.html',
- 'chota.css',
- 'favicon16x16.png',
- 'favicon32x32.png',
- 'favicon64x64.png',
- 'favicon148x148.png',
- 'dict.js',
- 'sqlite3.js',
- 'sqlite3.wasm'];
+ 'error.html'];
 
 self.addEventListener('install', (e) => {
  console.log("[Service Worker] Trying to install");
@@ -52,7 +39,8 @@ self.addEventListener('fetch', event => {
       });
     })
   );
-});*/
+});
+*/
 /*
 self.addEventListener('fetch', (e) => {
  e.respondWith(caches.match(e.request).then((response) => {
@@ -74,16 +62,9 @@ self.tuninstall = function(){
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     (async () => {
-      var r = await caches.match(e.request, {ignoreSearch: true});
-      console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
-      if (r) {
-        return r;
-			}
-      const response = await fetch(e.request);
-      const cache = await caches.open(cache_name);
-      console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
-      cache.put(e.request, response.clone());
-      return response;
+	if(e.request.url.match("index.html"))
+		return caches.match("index.html");
+	return caches.match("error.html");
     })(),
   );
 });
