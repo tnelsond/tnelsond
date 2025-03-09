@@ -39,22 +39,6 @@
         };
     }
     const dstyle = {};
-    dstyle["kh"] = '<h3 class="hent">###</h3>';
-    dstyle["w"] = '<h3 class="hent">###</h3>';
-    dstyle["headley97"] = '<p style="color: #240074"><span class="tag is-small">Headley 97</span><br>###</p>';
-    dstyle["khdef"] = '<p style="color: #003333"><span class="tag is-small">Chuon Nath 2022</span><br>###</p>';
-    dstyle["def"] = '<p><span class="tag is-small">Sonveasna</span><br>###</p>';
-    dstyle["khph"] = '<p style="color: #000000">###</p>';
-    dstyle["csea"] = '<span style="color: red">###</span><sup>csea</sup> ';
-    dstyle["ckhsv"] = '<span style="color: purple">###</span><sup>ckhsv</sup> ';
-    dstyle["ckhov"] = '<span style="color: green">###</span><sup>ckhov</sup> ';
-    dstyle["cchrist"] = '<span style="color: blue">###</span><sup>cchrist</sup> ';
-    dstyle["lyrics"] = '<p style="color:#000044">###</p>';
-    dstyle["misc"] = '<span style="color: #662200">###</span> ';
-    dstyle["m"] = '<span style="color: #770066">###</span> ';
-    dstyle["media"] = '<div class="media" id="#####"><button onclick="javascript:tAudio(this);">▶</button></div>';
-    dstyle["context"] = '<details class="context"><h2>Words Before:</h2>###</details> ';
-
     onmessage = (e) => {
         console.log("Worker: Message received from main script#: " + e);
         console.log("Worker: Data received from main script#: " + e.data);
@@ -217,6 +201,16 @@
 										sql: "SELECT name FROM sqlite_master WHERE type='table' order by name asc;",
 										rowMode: "array", // 'array' (default), 'object', or 'stmt'
 										callback: function (row) {
+											 if(row.toString() == "_config"){
+												 db.exec({
+													sql: "select * from _config;",
+													rowMode: "array", // 'array' (default), 'object', or 'stmt'
+													callback: function (cow) {
+															++this.counter;
+															dstyle[cow[0]] = cow[1];
+													}.bind({ counter: 0 }),
+												});
+											 }else{
 											 logHtml("dictlist", row);
 											 db.exec({
 												sql: "PRAGMA table_info(" + row + ");",
@@ -226,7 +220,7 @@
 														logHtml("init2", cow[1]);
 												}.bind({ counter: 0 }),
 										});
-
+										}
 										}.bind({ counter: 0 }),
 								});
 
