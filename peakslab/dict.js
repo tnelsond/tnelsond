@@ -201,7 +201,8 @@
 										sql: "SELECT name FROM sqlite_master WHERE type='table' order by name asc;",
 										rowMode: "array", // 'array' (default), 'object', or 'stmt'
 										callback: function (row) {
-											 if(row.toString() == "_config"){
+											 console.log("######" + row[0]);
+											 if(row[0] == "_config"){
 												 db.exec({
 													sql: "select * from _config;",
 													rowMode: "array", // 'array' (default), 'object', or 'stmt'
