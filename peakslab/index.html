@@ -31,6 +31,7 @@
                 background: #ffcccc;
                 border-radius: 10px;
                 padding: 1em;
+		overflow-wrap: anywhere;
             }
 
             .dropd-content {
@@ -353,7 +354,7 @@
                     console.log("MAIN: Message posted to worker");
 										const q2 = q.value.replaceAll(/[']+/g, "‘")
                     tout.innerHTML = "";
-										tresults.innerHTML = (qcol.value != "*ALL" && all) ? "Narrow search failed, doing wide search. Results: " : "Results: ";
+										tresults.innerHTML = (qcol.value != "*ALL" && all) ? "Narrow Search yielded no results. Wide Search Results: " : "Narrow Search Results: ";
 										trestotal = 0;
 										fullsearch = all;
 										if(all == 0 && qcol.value != "*ALL"){
