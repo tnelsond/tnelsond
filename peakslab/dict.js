@@ -182,12 +182,13 @@
     var db = null;
     var dbass = null;
     const demo1 = function (sqlite3, dbUrl, immutable = false) {
-        fetch(dbUrl)
+				fetch(dbUrl)
             .then((res) => res.arrayBuffer())
             .then((arrayBuffer) => {
                 if (!immutable) {
                     arrayBuffer.resizeable = true;
                 }
+								console.log("TRYING!!!");
                 const p = sqlite3.wasm.allocFromTypedArray(arrayBuffer);
                 db = new sqlite3.oo1.DB();
                 let deserialize_flags = sqlite3.capi.SQLITE_DESERIALIZE_FREEONCLOSE;
@@ -196,12 +197,12 @@
                 }
                 const rc = sqlite3.capi.sqlite3_deserialize(db.pointer, "main", p, arrayBuffer.byteLength, arrayBuffer.byteLength, deserialize_flags);
                 db.checkRc(rc);
-
+								
+								try{
 								db.exec({
 										sql: "SELECT name FROM sqlite_master WHERE type='table' order by name asc;",
 										rowMode: "array", // 'array' (default), 'object', or 'stmt'
 										callback: function (row) {
-											 console.log("######" + row[0]);
 											 if(row[0] == "_config"){
 												 db.exec({
 													sql: "select * from _config;",
@@ -227,6 +228,9 @@
 
 									logHtml("refresh", "");
                 //        xplorer.setDb(db);
+						}catch(e){
+							error("ERROR: " + e.message);
+						}
             });
     };
     const initassets = function (sqlite3, dbUrl, immutable = false) {
