@@ -354,7 +354,7 @@
                     console.log("MAIN: Message posted to worker");
 										const q2 = q.value.replaceAll(/[']+/g, "‘")
                     tout.innerHTML = "";
-										tresults.innerHTML = (qcol.value != "*ALL" && all) ? "Narrow Search yielded no results. Wide Search Results: " : "Narrow Search Results: ";
+										tresults.innerHTML = (qcol.value != "*ALL" && all) ? 'Exact Search: <span class="bd-error">0;</span> Wide Search: ' : "Narrow Search Results: ";
 										trestotal = 0;
 										fullsearch = all;
 										if(all == 0 && qcol.value != "*ALL"){
