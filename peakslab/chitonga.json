@@ -5,7 +5,7 @@
   "background_color": "#007700",
   "display": "fullscreen",
   "scope": "/peakslab",
-  "start_url": "/peakslab/chitonga",
+  "start_url": "/peakslab/chitonga.html",
 	"icons": [
   {
     "src": "favicon32x32.png",

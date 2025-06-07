@@ -5,7 +5,7 @@
   "background_color": "#883300",
   "display": "fullscreen",
   "scope": "/peakslab",
-  "start_url": "/peakslab/khmer/",
+  "start_url": "/peakslab/khmer.html",
 	"icons": [
   {
     "src": "favicon32x32.png",

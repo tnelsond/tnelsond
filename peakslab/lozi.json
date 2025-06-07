@@ -5,7 +5,7 @@
   "background_color": "#000077",
   "display": "fullscreen",
   "scope": "/peakslab",
-  "start_url": "/peakslab/lozi",
+  "start_url": "/peakslab/lozi.html",
 	"icons": [
   {
     "src": "favicon32x32.png",
