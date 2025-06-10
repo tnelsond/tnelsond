@@ -1,4 +1,4 @@
-let cache_name = 'peakslab 0.3.6';
+let cache_name = 'peakslab 0.3.8';
 let urls_to_cache = [
  'index.html',
  './',
