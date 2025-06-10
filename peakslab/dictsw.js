@@ -1,4 +1,4 @@
-let cache_name = 'peakslab 0.4.1';
+let cache_name = 'peakslab 0.4.2';
 let urls_to_cache = [
  'index.html',
  './',
@@ -13,6 +13,7 @@ let urls_to_cache = [
 
 self.addEventListener('install', (e) => {
  console.log("[Service Worker] Trying to install");
+ self.skipWaiting()
  e.waitUntil(caches.open(cache_name).then((cache) => {
     /*const stack = [];
     urls_to_cache.forEach(file => stack.push(
