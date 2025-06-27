@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png" />
-    <title>PS&nbsp;Lao</title>
+    <title>PS&nbsp;</title>
     <link rel="stylesheet" href="chota.css">
     <link rel="manifest" id="link" href="lao.json">
     <style>
@@ -259,6 +259,42 @@
       <div id="tout"></div>
       <div id="tbug" class="tbug"></div>
       <script>
+        const synth = window.speechSynthesis;
+        let voices = [];
+
+        function populateVoiceList() {
+            voices = synth.getVoices();
+        }
+
+        // Populate voices when they're loaded
+        synth.onvoiceschanged = populateVoiceList;
+        populateVoiceList();
+
+        function speak(text, lang) {
+            if (synth.speaking) {
+                synth.cancel();
+            }
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.voice = voices.find(voice => voice.lang.includes(lang.substring(0,2)));
+	    if(!utterance.voice){
+		alert('You don\'t have text to speech language "' + lang + '" on your device.');
+	    }
+            utterance.lang = lang;
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            utterance.volume = 1;
+
+            synth.speak(utterance);
+        }
+
+        // Load voices on page load
+        window.onload = () => {
+            if (voices.length === 0) {
+                populateVoiceList();
+            }
+        };
+
         const tsel = document.getElementById("tablesel");
         const qcol = document.getElementById("qcol");
         const limitd = document.getElementById("limitd");
@@ -276,7 +312,7 @@
             }
           });
           q.value = urlParams.get('q');
-          var desc = true;
+          var desc = false;
           var tToggleDesc = function(div) {
             desc = !desc;
             if (desc) {
@@ -339,7 +375,7 @@
               } else if (cssClass == "init2") {
                 tlist[tlist.length - 1].col.push(args);
               } else if (cssClass == "dictlist") {
-                /*tlist = [{name: "khmer7", col: ["kh", "csea", "headley97", "misc"]}, {name: "xEng", col: ["w", "def", "m"]}];*/
+                /*tlist = [{name: "lao7", col: ["kh", "csea", "headley97", "misc"]}, {name: "xEng", col: ["w", "def", "m"]}];*/
                 tlist.push({
                   name: args,
                   col: []
@@ -440,7 +476,7 @@
                 ";"
               );
             } else {
-              /*tlist = [{name: "khmer7", col: ["kh", "csea", "headley97", "misc"]}, {name: "xEng", col: ["w", "def", "m"]}];*/
+              /*tlist = [{name: "lao7", col: ["kh", "csea", "headley97", "misc"]}, {name: "xEng", col: ["w", "def", "m"]}];*/
               tlist.forEach(function tcallall(ctab) {
                 /*	for (let i = 0; i < ctab.col.length; i++) {
                 let ccol = ctab.col[i]; */

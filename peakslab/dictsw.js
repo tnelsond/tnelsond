@@ -1,4 +1,4 @@
-let cache_name = 'peakslab 0.4.4';
+let cache_name = 'peakslab 0.5.0.3';
 let urls_to_cache = [
  'index.html',
  './',
@@ -65,8 +65,7 @@ self.tuninstall = function(){
 			for (let name of names)
 					caches.delete(name);
 	});
-}
-*/
+}*/
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     (async () => {
