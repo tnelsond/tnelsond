@@ -276,10 +276,7 @@
             }
 
             const utterance = new SpeechSynthesisUtterance(text);
-            utterance.voice = voices.find(voice => voice.lang.includes(lang.substring(0,2)));
-	    if(!utterance.voice){
-		alert('You don\'t have text to speech language "' + lang + '" on your device.');
-	    }
+            utterance.voice = voices.find(voice => voice.lang.includes(lang.substring(0,2)) || voice[0]);
             utterance.lang = lang;
             utterance.pitch = 1;
             utterance.rate = 1;
