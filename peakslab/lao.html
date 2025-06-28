@@ -259,11 +259,39 @@
       <div id="tout"></div>
       <div id="tbug" class="tbug"></div>
       <script>
+	const tbug =  document.getElementById("tbug");
         const synth = window.speechSynthesis;
         let voices = [];
 
+// Function to create CSS classes based on available voices
+function updateLanguageStyles() {
+    const availableLangs = new Set(voices.map(voice => voice.lang.toLowerCase()));
+
+    const styleElement = document.createElement('style');
+    styleElement.type = 'text/css';
+
+    // Default rule: hide all lang- prefixed classes
+    let css = '[class^="lang-"] { display: none; }\n';
+
+    availableLangs.forEach(lang => {
+        css += `.lang-${lang.substr(0,2)} { display: inline; }\n`;
+    });
+
+    styleElement.textContent = css;
+
+    const existingStyle = document.getElementById('lang-styles');
+    if (existingStyle) {
+        existingStyle.remove();
+    }
+    styleElement.id = 'lang-styles';
+
+    document.head.appendChild(styleElement);
+}
+
         function populateVoiceList() {
             voices = synth.getVoices();
+	    updateLanguageStyles();
+	    tbug.innerHTML+="🗣️";
         }
 
         // Populate voices when they're loaded
@@ -276,21 +304,18 @@
             }
 
             const utterance = new SpeechSynthesisUtterance(text);
-            utterance.voice = voices.find(voice => voice.lang.includes(lang.substring(0,2)) || voice[0]);
+            utterance.voice = voices.find(voice => voice.lang.includes(lang.substr(0, 2)));
+	    if(!utterance.voice)
+		alert(lang + ' language not supported');
+	    else{
             utterance.lang = lang;
             utterance.pitch = 1;
-            utterance.rate = 1;
+            utterance.rate = 0.5;
             utterance.volume = 1;
 
             synth.speak(utterance);
+	 }
         }
-
-        // Load voices on page load
-        window.onload = () => {
-            if (voices.length === 0) {
-                populateVoiceList();
-            }
-        };
 
         const tsel = document.getElementById("tablesel");
         const qcol = document.getElementById("qcol");
@@ -328,7 +353,7 @@
           const bcheck = document.getElementById("bcheck");
           const echeck = document.getElementById("echeck");
           const dcol = document.getElementById("dcol");
-          document.getElementById("tbug").innerHTML += urlParams;
+          tbug.innerHTML += urlParams;
           const w = new Worker(
             "dict.js" // + urlParams
             /* Note the URL argument on that name. See
