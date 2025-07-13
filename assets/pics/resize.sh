@@ -1,3 +1,6 @@
 #/bin/sh
 
-gmic -input $1 -resize3dx ${2:-600}  -output $1.jpg,${3:-85}
+for f in $@; do
+
+gmic -input $f -rs 700  -output $f,55	
+done;
