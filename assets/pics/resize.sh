@@ -2,5 +2,6 @@
 
 for f in $@; do
 
-gmic -input $f -rs 700  -output $f,55	
+magick $f -auto-orient $f
+gmic -input $f -rs 700  -output $f,68	
 done;
