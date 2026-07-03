@@ -20,8 +20,8 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : " Tnelsond"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Tommy Downs"
-description              : "serving Jesus with Overland Missions"
+name                     : "Tommy, Lin, & Gabrielle Downs"
+description              : "with Overland Missions"
 url                      : https://tnelsond.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : tnelsond/tnelsond # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -325,5 +325,5 @@ defaults:
       read_time: false
       show_date: true
       comments: # true
-      share: true
+      share: false
       related: false
