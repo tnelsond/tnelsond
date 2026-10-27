@@ -24,6 +24,10 @@ We're sons of God, priests of God, heirs of God.
 
 I'm a missionary with [Overland Missions](http://overlandmissions.com) in Cambodia.
 
+After 3 years in Cambodia I married a Khmer woman named Lin. We work together and we have one child.
+
+{% include figure popup=true image_path="/assets/pics/2026/09/rev-fam2.webp" caption="Tommy, Lin, and Gabrielle." %}
+
 If there's any way I can help you, reach out:
 
 > [Tommy@OverlandMissions.com](mailto:tommy@overlandmissions.com)

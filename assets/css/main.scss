@@ -5,24 +5,242 @@ search: false
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+/* ==========================================================================
+   OM Brand Guide – Restyled Minimal Mistakes
+   Colors, type & usage follow the official Overland Missions brand guide.
+   ========================================================================== */
+
+/* Load the OM skin (place _om.scss in _sass/minimal-mistakes/skins/) */
+@import "minimal-mistakes/skins/om"; // skin
 @import "minimal-mistakes"; // main partials
 
-@font-face {
-  font-family: "nexa";
-  src: url("../fonts/nexaregular.otf");
-}
-@font-face {
-  font-family: "horizon";
-  src: url("../fonts/horizon.otf");
-}
-h1,h2,h3 {
-    font-family: horizon;
-}
-h4,h5,h6,p,body {
-    font-family: nexa;
-    font-weight:1200;
+/* --------------------------------------------------------------------------
+   Typography – official brand typefaces
+   Primary:   Work Sans          (body, UI, general readability)
+   Secondary: IBM Plex Sans Condensed  (headlines / compact UI)
+   Accent:    Space Mono         (labels, tech specs, small UI)
+   -------------------------------------------------------------------------- */
+
+/* Google Fonts are loaded via _includes/head/custom.html */
+
+/* Base type */
+body,
+p,
+li,
+td,
+th,
+input,
+textarea,
+select,
+button,
+.page__content {
+  font-family: "Work Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em; /* close to brand’s recommended -25 tracking on long copy */
+  line-height: 1.65;
+  color: $text-color;
 }
 
-body{background-image: url(/assets/om-bg.png);
+/* Headings – IBM Plex Sans Condensed for a clean, utilitarian contrast */
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__item-title,
+.page__meta,
+.greedy-nav .site-title {
+  font-family: "IBM Plex Sans Condensed", "Work Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: $text-color;
+  line-height: 1.25;
+}
+
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+
+/* Small labels / mono accent */
+.page__meta,
+.page__date,
+.pagination,
+.nav__list .nav__items a,
+code, kbd, pre, samp {
+  font-family: "Space Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* --------------------------------------------------------------------------
+   Global layout & surfaces
+   -------------------------------------------------------------------------- */
+
+body {
+  background-color: $background-color; /* Bone */
+  /* Optional subtle texture – keep if you still have om-bg.png, otherwise solid Bone is brand-correct */
+  /* background-image: url(/assets/om-bg.png); */
+  background-attachment: fixed;
+}
+
+/* Masthead */
+.masthead {
+  background-color: $background-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.greedy-nav {
+  background: $background-color;
+}
+
+.greedy-nav a {
+  color: $masthead-link-color;
+}
+
+.greedy-nav a:hover {
+  color: $masthead-link-color-hover;
+}
+
+.greedy-nav .visible-links a:before {
+  background: $primary-color; /* Flare underline */
+}
+
+/* Links */
+a {
+  color: $link-color;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: darken($primary-color, 8%);
+}
+
+/* Buttons – Flare is reserved for CTAs */
+.btn,
+.button {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #fff !important;
+  font-family: "IBM Plex Sans Condensed", "Work Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover,
+.button:hover {
+  background-color: darken($primary-color, 8%);
+  border-color: darken($primary-color, 8%);
+}
+
+.btn--primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+/* Notice / callouts */
+.notice {
+  border-left-color: $primary-color;
+}
+
+/* Footer */
+.page__footer {
+  background-color: $footer-background-color; /* Slate */
+  color: #DDD7CE; /* Bone text on Slate */
+}
+
+.page__footer a {
+  color: #BAA283; /* Sand */
+}
+
+.page__footer a:hover {
+  color: #EC4300; /* Flare */
+}
+
+.page__footer-copyright {
+  color: mix(#DDD7CE, #393D36, 70%);
+}
+
+/* Archive / cards */
+.archive__item {
+  border-color: $border-color;
+}
+
+.archive__item-teaser {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Code blocks */
+div.highlighter-rouge,
+figure.highlight {
+  background-color: #0F0E0D;
+  border-radius: 2px;
+}
+
+/* Tables */
+table {
+  border-color: $border-color;
+}
+
+th {
+  background-color: mix($background-color, $border-color, 60%);
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 600;
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  border-color: $border-color;
+  background-color: lighten($background-color, 4%);
+  font-family: "Work Sans", sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: $primary-color;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(236, 67, 0, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   Brand-specific refinements
+   -------------------------------------------------------------------------- */
+
+/* Site title treatment */
+.greedy-nav .site-title {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Make the Flare accent feel intentional on interactive elements */
+.pagination--pager {
+  color: $text-color;
+  border-color: $border-color;
+}
+
+.pagination--pager:hover {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  border-color: $border-color;
+}
+
+/* Ensure high contrast for body text on Bone */
+.page__content {
+  color: $text-color;
+}
+
+/* Soften the default Minimal Mistakes box-shadows to feel more brand-aligned */
+.archive__item-teaser img,
+.page__hero--overlay {
+  box-shadow: none;
 }

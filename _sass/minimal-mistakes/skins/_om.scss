@@ -1,0 +1,47 @@
+/* ==========================================================================
+   OM (Overland Missions) brand skin
+   Based on official brand guide colors & typography recommendations
+   ========================================================================== */
+
+/* Core brand colors
+   Flare   #EC4300  – emotional signature, CTAs, highlights
+   Sand    #BAA283  – warm neutral
+   Bone    #DDD7CE  – light background / contrast
+   Slate   #393D36  – dark text / UI
+   Shadow  #0F0E0D  – deepest background / high contrast text
+
+   Sub-brand (optional accents)
+   Expedition #354C21
+   AMT        #324360
+   Sector     #B4894C
+*/
+
+/* Colors */
+$background-color:           #DDD7CE !default; /* Bone */
+$text-color:                 #0F0E0D !default; /* Shadow */
+$muted-text-color:           #393D36 !default; /* Slate */
+$primary-color:              #EC4300 !default; /* Flare */
+$border-color:               #BAA283 !default; /* Sand */
+$footer-background-color:    #393D36 !default; /* Slate */
+$link-color:                 #EC4300 !default; /* Flare */
+$masthead-link-color:        #0F0E0D !default;
+$masthead-link-color-hover:  #EC4300 !default;
+$navicon-link-color-hover:   mix(#fff, $text-color, 80%) !default;
+
+/* Syntax highlighting – warm earthy palette inspired by brand */
+$base00: #0F0E0D !default; /* Shadow */
+$base01: #1a1917 !default;
+$base02: #393D36 !default; /* Slate */
+$base03: #5c5a52 !default;
+$base04: #8a8070 !default;
+$base05: #BAA283 !default; /* Sand */
+$base06: #DDD7CE !default; /* Bone */
+$base07: #f5f1ea !default;
+$base08: #EC4300 !default; /* Flare */
+$base09: #B4894C !default; /* Sector */
+$base0a: #BAA283 !default;
+$base0b: #354C21 !default; /* Expedition */
+$base0c: #324360 !default; /* AMT */
+$base0d: #EC4300 !default;
+$base0e: #B4894C !default;
+$base0f: #393D36 !default;
